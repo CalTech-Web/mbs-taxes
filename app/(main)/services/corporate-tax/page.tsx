@@ -95,7 +95,7 @@ export default function CorporateTaxPage() {
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-gold-400/90 backdrop-blur-sm text-dark rounded-xl p-5 shadow-xl ring-1 ring-gold-300/30">
+                <div className="absolute -bottom-6 -left-6 bg-gold-400/90 backdrop-blur-sm text-white rounded-xl p-5 shadow-xl ring-1 ring-gold-300/30">
                   <p className="text-3xl font-heading font-bold">30+</p>
                   <p className="text-sm font-medium">Years of Experience</p>
                 </div>

@@ -146,7 +146,7 @@ export default function HomePage() {
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-gold-400/90 backdrop-blur-sm text-dark rounded-xl p-5 shadow-xl ring-1 ring-gold-300/30">
+                <div className="absolute -bottom-6 -left-6 bg-gold-400/90 backdrop-blur-sm text-white rounded-xl p-5 shadow-xl ring-1 ring-gold-300/30">
                   <p className="text-3xl font-heading font-bold">30+</p>
                   <p className="text-sm font-medium">Years of Service</p>
                 </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
           <ScrollReveal delay={0.3} className="mt-10 text-center">
             <Link
               href="/why-choose-us"
-              className="btn-shine inline-flex items-center gap-2 px-8 py-3.5 bg-gold-400 text-dark font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg"
+              className="btn-shine inline-flex items-center gap-2 px-8 py-3.5 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg"
             >
               Learn More <ArrowRight className="w-4 h-4" />
             </Link>

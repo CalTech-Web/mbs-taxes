@@ -193,7 +193,7 @@ export default function WhyChooseUsPage() {
             {steps.map((step, i) => (
               <ScrollReveal key={step.number} delay={i * 0.12}>
                 <div className="relative text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <div className="w-12 h-12 rounded-full bg-gold-400 text-dark flex items-center justify-center mx-auto mb-4 font-heading font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gold-400 text-white flex items-center justify-center mx-auto mb-4 font-heading font-bold text-lg">
                     {step.number}
                   </div>
                   <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">

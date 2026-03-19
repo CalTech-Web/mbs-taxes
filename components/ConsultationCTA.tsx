@@ -76,7 +76,7 @@ export default function ConsultationCTA() {
         >
           <Link
             href="/contact"
-            className="btn-shine px-8 py-3.5 bg-gold-400 text-dark font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="btn-shine px-8 py-3.5 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Schedule Free Consultation
           </Link>
