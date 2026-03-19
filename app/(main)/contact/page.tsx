@@ -40,7 +40,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 mt-8">
             {/* Contact Form */}
             <ScrollReveal>
-              <div className="card-luxury card-navy rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
+              <div className="card-luxury card-navy rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-6">
                   Send Us a Message
                 </h3>

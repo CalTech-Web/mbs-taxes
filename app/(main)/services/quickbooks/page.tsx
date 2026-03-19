@@ -123,7 +123,7 @@ export default function QuickBooksPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all">
+                <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
                   <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
@@ -144,7 +144,7 @@ export default function QuickBooksPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {whoBenefits.map((type, i) => (
               <ScrollReveal key={type} delay={i * 0.08}>
-                <div className="card-luxury card-navy rounded-xl p-5 text-center border border-navy-100/20">
+                <div className="card-luxury card-navy rounded-xl p-5 text-center h-full border border-navy-100/20">
                   <p className="font-heading text-sm font-semibold text-dark">{type}</p>
                 </div>
               </ScrollReveal>

@@ -112,7 +112,7 @@ export default function WhyChooseUsPage() {
           />
           <div className="grid md:grid-cols-2 gap-12 items-start mt-8">
             <ScrollReveal>
-              <div className="card-luxury card-gold rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
+              <div className="card-luxury card-gold rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <div className="w-14 h-14 rounded-2xl icon-luxury flex items-center justify-center mb-5">
                   <FileSearch className="w-7 h-7 text-amber-500" />
                 </div>
@@ -133,7 +133,7 @@ export default function WhyChooseUsPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="card-luxury card-blue rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
+              <div className="card-luxury card-blue rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <div className="w-14 h-14 rounded-2xl icon-luxury flex items-center justify-center mb-5">
                   <Users className="w-7 h-7 text-blue-500" />
                 </div>
