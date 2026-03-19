@@ -73,7 +73,7 @@ export default function Header() {
             </span>
             <a
               href="tel:3102562412"
-              className="flex items-center gap-2 hover:text-gold-400 transition-colors font-medium"
+              className="flex items-center gap-2 hover:text-red-400 transition-colors font-medium"
             >
               <Phone className="w-3.5 h-3.5" />
               (310) 256-2412
@@ -121,7 +121,7 @@ export default function Header() {
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
                         scrolled
                           ? "text-dark hover:text-navy-500"
-                          : "text-white hover:text-gold-300"
+                          : "text-white hover:text-red-300"
                       }`}
                       aria-haspopup="true"
                     >
@@ -155,7 +155,7 @@ export default function Header() {
                     className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
                       scrolled
                         ? "text-dark hover:text-navy-500"
-                        : "text-white hover:text-gold-300"
+                        : "text-white hover:text-red-300"
                     }`}
                   >
                     {item.label}
@@ -164,7 +164,7 @@ export default function Header() {
               )}
               <a
                 href="tel:3102562412"
-                className="ml-2 px-5 py-2.5 bg-gold-400 text-dark text-sm font-semibold rounded-full hover:bg-gold-300 transition-all shadow-md hover:shadow-lg"
+                className="ml-2 px-5 py-2.5 bg-red-700 text-white text-sm font-semibold rounded-full hover:bg-red-600 transition-all shadow-md hover:shadow-lg"
               >
                 Call Now
               </a>
