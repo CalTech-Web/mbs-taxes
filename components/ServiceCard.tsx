@@ -40,6 +40,7 @@ export default function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="h-full"
     >
       <Link href={href} className="group block h-full" aria-label={`Learn more about ${title}`}>
         <div className={`card-luxury card-${accent} rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10`}>

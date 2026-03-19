@@ -31,7 +31,7 @@ export default function ScrollReveal({
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration, delay, ease: "easeOut" }}
-      className={className}
+      className={`h-full ${className}`}
     >
       {children}
     </motion.div>

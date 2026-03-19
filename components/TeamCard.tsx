@@ -24,7 +24,7 @@ export default function TeamCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="card-luxury card-navy rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10"
+      className="card-luxury card-navy rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10"
     >
       <div className="flex items-center gap-3 mb-4">
         <div className="w-14 h-14 rounded-full bg-navy-500 flex items-center justify-center text-white font-heading font-bold text-xl">
