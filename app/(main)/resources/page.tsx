@@ -9,6 +9,11 @@ import {
   DollarSign,
   Star,
   MessageSquare,
+  Newspaper,
+  Mail,
+  Lightbulb,
+  Video,
+  FolderOpen,
 } from "lucide-react";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 
@@ -59,13 +64,55 @@ const resources: ResourceLink[] = [
     href: "/contact",
     accent: "teal",
   },
+  {
+    icon: FolderOpen,
+    title: "Client Resource Center",
+    description:
+      "Access practical tools including newsletters, tax tips, and tax videos to stay informed and prepared.",
+    href: "/resources/client-resource-center",
+    accent: "navy",
+  },
+  {
+    icon: Newspaper,
+    title: "Tax & Business Newsletter",
+    description:
+      "Stay informed with updates on tax laws, financial planning, and business guidance.",
+    href: "/resources/newsletters",
+    accent: "gold",
+  },
+  {
+    icon: Mail,
+    title: "Client Update Newsletter",
+    description:
+      "Important tax changes, deadlines, and service updates from MBS TAXES.",
+    href: "/resources/client-update-newsletter",
+    accent: "blue",
+  },
+  {
+    icon: Lightbulb,
+    title: "Tax Tips",
+    description:
+      "Practical strategies to reduce tax liability and improve financial organization.",
+    href: "/resources/tax-tips",
+    accent: "rose",
+  },
+  {
+    icon: Video,
+    title: "Tax Videos",
+    description:
+      "Watch informative videos on tax preparation, accounting, and financial planning.",
+    href: "/resources/tax-videos",
+    accent: "emerald",
+  },
 ];
 
 const accentIconColors: Record<string, string> = {
   navy: "text-navy-500",
-  gold: "text-amber-500",
+  gold: "text-red-600",
   blue: "text-blue-500",
   teal: "text-teal-500",
+  rose: "text-rose-500",
+  emerald: "text-emerald-500",
 };
 
 export default function ResourcesPage() {
@@ -86,7 +133,7 @@ export default function ResourcesPage() {
             description="Access the information and tools you need to stay informed about our services, pricing, and how to work with our team."
           />
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource, i) => {
               const Icon = resource.icon;
               const iconColor = accentIconColors[resource.accent] || "text-navy-500";

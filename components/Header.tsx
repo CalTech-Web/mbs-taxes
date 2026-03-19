@@ -28,6 +28,11 @@ const navItems = [
     children: [
       { label: "FAQs", href: "/faqs" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Client Resource Center", href: "/resources/client-resource-center" },
+      { label: "Newsletters", href: "/resources/newsletters" },
+      { label: "Client Update Newsletter", href: "/resources/client-update-newsletter" },
+      { label: "Tax Tips", href: "/resources/tax-tips" },
+      { label: "Tax Videos", href: "/resources/tax-videos" },
     ],
   },
   { label: "Contact", href: "/contact" },
