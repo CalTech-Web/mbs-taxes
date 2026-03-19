@@ -8,7 +8,7 @@ export type CardAccent = "navy" | "gold" | "blue" | "rose" | "teal" | "emerald";
 
 const accentIconColors: Record<CardAccent, string> = {
   navy: "text-navy-500",
-  gold: "text-amber-500",
+  gold: "text-red-600",
   blue: "text-blue-500",
   rose: "text-rose-500",
   teal: "text-teal-500",

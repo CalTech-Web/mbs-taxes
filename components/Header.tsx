@@ -96,9 +96,7 @@ export default function Header() {
                 alt="MBS Taxes"
                 width={180}
                 height={60}
-                className={`h-14 w-auto transition-all duration-300 ${
-                  scrolled ? "" : "brightness-0 invert"
-                }`}
+                className="h-14 w-auto transition-all duration-300"
                 priority
               />
             </Link>

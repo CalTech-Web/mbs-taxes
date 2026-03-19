@@ -13,17 +13,17 @@
   --color-navy-800: #101f38;
   --color-navy-900: #0b162b;
 
-  /* Accent - Gold */
-  --color-gold-50: #fef8e8;
-  --color-gold-100: #fcedc5;
-  --color-gold-200: #f9dc8e;
-  --color-gold-300: #f2c44d;
-  --color-gold-400: #e49e00;
-  --color-gold-500: #c98b00;
-  --color-gold-600: #a37200;
-  --color-gold-700: #7d5700;
-  --color-gold-800: #573d00;
-  --color-gold-900: #312200;
+  /* Accent - Red */
+  --color-gold-50: #fef2f2;
+  --color-gold-100: #fecaca;
+  --color-gold-200: #fca5a5;
+  --color-gold-300: #f87171;
+  --color-gold-400: #b91c1c;
+  --color-gold-500: #991b1b;
+  --color-gold-600: #7f1d1d;
+  --color-gold-700: #6b1616;
+  --color-gold-800: #521111;
+  --color-gold-900: #3b0d0d;
 
   /* Red Accent */
   --color-crimson-400: #dc2626;
