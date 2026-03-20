@@ -63,12 +63,12 @@ const whyChoose = [
 ];
 
 const clientTypes = [
-  { label: "Individuals & Families", icon: Users },
-  { label: "Small Business Owners", icon: BriefcaseBusiness },
-  { label: "Growing Companies", icon: Rocket },
-  { label: "Businesses & Startups", icon: Building },
-  { label: "Self-Employed Professionals", icon: UserRound },
-  { label: "Established Businesses", icon: LandPlot },
+  { label: "Individuals & Families", icon: Users, desc: "Personal tax returns, estate planning, and financial guidance" },
+  { label: "Small Business Owners", icon: BriefcaseBusiness, desc: "Bookkeeping, payroll, and tax compliance for small businesses" },
+  { label: "Growing Companies", icon: Rocket, desc: "Scalable accounting solutions for expanding organizations" },
+  { label: "Businesses & Startups", icon: Building, desc: "Entity formation, tax strategy, and financial setup" },
+  { label: "Self-Employed Professionals", icon: UserRound, desc: "Schedule C filing, deductions, and quarterly estimates" },
+  { label: "Established Businesses", icon: LandPlot, desc: "Corporate accounting, audits, and multi-state compliance" },
 ];
 
 const serviceAreas = [
@@ -206,21 +206,31 @@ export default function HomePage() {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-24 section-depth relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+        <div className="orb orb-gold orb-animate w-64 h-64 -top-16 -left-16 opacity-30" />
+        <div className="orb orb-navy orb-animate w-48 h-48 -bottom-12 -right-12 opacity-20" style={{ animationDelay: "4s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="Who We Serve"
             title="Trusted by Individuals & Businesses"
             description="Headquartered in Lawndale, California, we proudly serve businesses and individuals across Los Angeles County, the United States, and internationally."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {clientTypes.map((type, i) => {
               const Icon = type.icon;
               return (
                 <ScrollReveal key={type.label} delay={i * 0.08}>
-                  <div className="card-luxury card-navy rounded-xl p-6 text-center h-full border border-navy-100/20 flex flex-col items-center gap-3">
-                    <Icon className="w-7 h-7 text-gold-400" />
-                    <p className="font-heading text-sm font-semibold text-dark">{type.label}</p>
+                  <div className="group relative bg-white rounded-2xl p-7 h-full border border-navy-100/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-start gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
+                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-base font-bold text-dark">{type.label}</h3>
+                        <p className="mt-1 text-sm text-muted leading-relaxed">{type.desc}</p>
+                      </div>
+                    </div>
                   </div>
                 </ScrollReveal>
               );
@@ -228,17 +238,22 @@ export default function HomePage() {
           </div>
 
           {/* Service Areas */}
-          <div className="mt-16">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark text-center mb-3">
-              Areas We Serve
-            </h3>
-            <p className="text-muted text-center max-w-2xl mx-auto mb-8">
-              With offices in Lawndale, Long Beach, Palm Springs, and San Gabriel, we serve clients throughout the greater Los Angeles area and beyond.
-            </p>
+          <div className="mt-20 text-center">
+            <ScrollReveal>
+              <span className="inline-block mb-3 text-sm font-semibold tracking-widest uppercase text-gold-400">
+                Service Areas
+              </span>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark mb-3">
+                Areas We Serve
+              </h3>
+              <p className="text-muted max-w-2xl mx-auto mb-10">
+                With offices in Lawndale, Long Beach, Palm Springs, and San Gabriel, we serve clients throughout the greater Los Angeles area and beyond.
+              </p>
+            </ScrollReveal>
             <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
               {serviceAreas.map((area, i) => (
                 <ScrollReveal key={area} delay={i * 0.04}>
-                  <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy-500/10 border border-navy-200/30 rounded-full text-sm font-semibold text-navy-700 hover:bg-navy-500 hover:text-white transition-all cursor-default">
+                  <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-navy-200/40 rounded-full text-sm font-semibold text-navy-700 shadow-sm hover:bg-navy-500 hover:text-white hover:border-navy-500 hover:shadow-md transition-all duration-300 cursor-default">
                     <span className="relative flex h-4 w-4 shrink-0">
                       <span className="absolute inset-0 rounded-full bg-gold-400/40 animate-ping" />
                       <MapPin className="relative h-4 w-4 text-gold-500" />
