@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Phone } from "lucide-react";
@@ -29,12 +29,14 @@ export default function Hero({
 }: HeroProps) {
   const hasVideo = !!videoId;
   const [playing, setPlaying] = useState(false);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
 
+  // Pre-load Wistia scripts on mount so they're ready when user clicks play
   useEffect(() => {
-    if (!playing || !videoId) return;
+    if (!videoId) return;
 
-    // Load Wistia async embed scripts
+    const existing = document.querySelector('script[src*="fast.wistia.com/assets/external/E-v1.js"]');
+    if (existing) return;
+
     const script1 = document.createElement("script");
     script1.src = `https://fast.wistia.com/embed/medias/${videoId}.jsonp`;
     script1.async = true;
@@ -45,11 +47,20 @@ export default function Hero({
 
     document.head.appendChild(script1);
     document.head.appendChild(script2);
+  }, [videoId]);
 
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
-    };
+  // When user clicks play, use Wistia queue to auto-play
+  useEffect(() => {
+    if (!playing || !videoId) return;
+
+    const w = window as any;
+    w._wq = w._wq || [];
+    w._wq.push({
+      id: videoId,
+      onReady: (video: any) => {
+        video.play();
+      },
+    });
   }, [playing, videoId]);
 
   return (
@@ -153,10 +164,7 @@ export default function Hero({
             <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                 {playing ? (
-                  <div
-                    ref={videoContainerRef}
-                    className="absolute inset-0 wistia_responsive_padding"
-                  >
+                  <div className="absolute inset-0 wistia_responsive_padding">
                     <div
                       className={`wistia_embed wistia_async_${videoId} autoPlay=true playerColor=dc2626 videoFoam=true`}
                       style={{ width: "100%", height: "100%", position: "relative" }}
