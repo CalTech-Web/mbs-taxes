@@ -81,6 +81,7 @@ export default function HomePage() {
         bgImage="/images/pexels-yankrukov-7693717.jpg"
         primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        videoId="5bqtnevwpg"
       />
 
       <StatisticsCounter />
