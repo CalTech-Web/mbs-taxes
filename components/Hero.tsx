@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Phone } from "lucide-react";
@@ -29,6 +29,28 @@ export default function Hero({
 }: HeroProps) {
   const hasVideo = !!videoId;
   const [playing, setPlaying] = useState(false);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!playing || !videoId) return;
+
+    // Load Wistia async embed scripts
+    const script1 = document.createElement("script");
+    script1.src = `https://fast.wistia.com/embed/medias/${videoId}.jsonp`;
+    script1.async = true;
+
+    const script2 = document.createElement("script");
+    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
+    script2.async = true;
+
+    document.head.appendChild(script1);
+    document.head.appendChild(script2);
+
+    return () => {
+      document.head.removeChild(script1);
+      document.head.removeChild(script2);
+    };
+  }, [playing, videoId]);
 
   return (
     <section
@@ -131,13 +153,24 @@ export default function Hero({
             <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                 {playing ? (
-                  <iframe
-                    src={`https://fast.wistia.net/embed/iframe/${videoId}?autoPlay=true`}
-                    title="MBS Taxes Video"
-                    allow="autoplay; fullscreen"
-                    className="absolute inset-0 w-full h-full"
-                    style={{ border: 0 }}
-                  />
+                  <div
+                    ref={videoContainerRef}
+                    className="absolute inset-0 wistia_responsive_padding"
+                  >
+                    <div
+                      className={`wistia_embed wistia_async_${videoId} autoPlay=true playerColor=dc2626 videoFoam=true`}
+                      style={{ width: "100%", height: "100%", position: "relative" }}
+                    >
+                      <div className="wistia_swatch" style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, opacity: 0, overflow: "hidden", transition: "opacity 200ms" }}>
+                        <img
+                          src={`https://fast.wistia.com/embed/medias/${videoId}/swatch`}
+                          alt=""
+                          style={{ width: "100%", height: "100%", objectFit: "contain", filter: "blur(5px)" }}
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <button
                     onClick={() => setPlaying(true)}
@@ -146,7 +179,7 @@ export default function Hero({
                   >
                     {/* Wistia thumbnail */}
                     <img
-                      src={`https://embed-ssl.wistia.com/deliveries/65c9550daae5e795679f0b37ebbe6449.jpg?image_crop_resized=960x540`}
+                      src="https://embed-ssl.wistia.com/deliveries/65c9550daae5e795679f0b37ebbe6449.jpg?image_crop_resized=960x540"
                       alt="Video thumbnail"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
