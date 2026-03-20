@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
 interface HeroProps {
@@ -26,6 +28,7 @@ export default function Hero({
   videoId,
 }: HeroProps) {
   const hasVideo = !!videoId;
+  const [playing, setPlaying] = useState(false);
 
   return (
     <section
@@ -106,8 +109,12 @@ export default function Hero({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all"
+                  className="group inline-flex items-center gap-2.5 px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all"
                 >
+                  <span className="relative flex h-5 w-5 shrink-0">
+                    <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+                    <Phone className="relative h-5 w-5 fill-white" />
+                  </span>
                   {secondaryCta.label}
                 </Link>
               )}
@@ -123,13 +130,48 @@ export default function Hero({
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  src={`https://fast.wistia.net/embed/iframe/${videoId}?seo=true&videoFoam=false`}
-                  title="MBS Taxes Video"
-                  allow="autoplay; fullscreen"
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: 0 }}
-                />
+                {playing ? (
+                  <iframe
+                    src={`https://fast.wistia.net/embed/iframe/${videoId}?autoPlay=true`}
+                    title="MBS Taxes Video"
+                    allow="autoplay; fullscreen"
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 0 }}
+                  />
+                ) : (
+                  <button
+                    onClick={() => setPlaying(true)}
+                    className="absolute inset-0 w-full h-full cursor-pointer group"
+                    aria-label="Play video"
+                  >
+                    {/* Wistia thumbnail */}
+                    <img
+                      src={`https://embed-ssl.wistia.com/deliveries/65c9550daae5e795679f0b37ebbe6449.jpg?image_crop_resized=960x540`}
+                      alt="Video thumbnail"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+                    {/* Red pulsing play button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="relative flex items-center justify-center">
+                        {/* Pulse ring */}
+                        <span className="absolute h-20 w-20 rounded-full bg-red-600/40 animate-ping" />
+                        {/* Solid button */}
+                        <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-red-600 shadow-lg group-hover:bg-red-500 group-hover:scale-110 transition-all">
+                          <svg
+                            className="h-7 w-7 text-white ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </button>
+                )}
               </div>
             </div>
           </motion.div>
