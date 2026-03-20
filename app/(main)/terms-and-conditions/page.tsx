@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
-import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
@@ -17,7 +16,6 @@ export default function TermsAndConditionsPage() {
         title="Terms and Conditions"
         subtitle="Mossberg Business Services"
         bgImage="/images/pexels-khwanchai-12885860.jpg"
-        highlights={["Conditions"]}
         compact
       />
 
@@ -26,7 +24,6 @@ export default function TermsAndConditionsPage() {
           <SectionTitle
             subtitle="Legal"
             title="Terms of Service"
-            highlights={["Service"]}
             description="These Terms and Conditions govern your use of the MBS TAXES website and the services provided by Mossberg Business Services. By accessing or using our website and services, you agree to be bound by these terms."
           />
 
@@ -53,7 +50,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.05}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("General Conditions", ["General"])}
+                  General Conditions
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-3">
                   By using our website and services, you agree to the following
@@ -91,7 +88,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.1}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Accuracy of Information", ["Accuracy"])}
+                  Accuracy of Information
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   We make every effort to ensure the information on this website
@@ -109,7 +106,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.15}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Pricing and Service Changes", ["Service"])}
+                  Pricing and Service Changes
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   Prices for our services are subject to change without notice.
@@ -125,7 +122,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.2}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Third-Party Links", ["Third-Party"])}
+                  Third-Party Links
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   Our website may contain links to third-party websites or
@@ -143,7 +140,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.25}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Personal Information", ["Personal"])}
+                  Personal Information
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   Your submission of personal information through this website
@@ -177,7 +174,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.35}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Governing Law", ["Governing"])}
+                  Governing Law
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   These Terms and Conditions shall be governed by and construed
@@ -194,7 +191,7 @@ export default function TermsAndConditionsPage() {
             <ScrollReveal delay={0.4}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Contact Information", ["Contact"])}
+                  Contact Information
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-3">
                   If you have any questions about these Terms and Conditions,

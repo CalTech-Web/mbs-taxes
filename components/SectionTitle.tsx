@@ -1,10 +1,8 @@
 import ScrollReveal from "./ScrollReveal";
-import { highlightText } from "@/lib/highlightText";
 
 interface SectionTitleProps {
   subtitle?: string;
   title: string;
-  highlights?: string[];
   description?: string;
   align?: "left" | "center";
   light?: boolean;
@@ -13,7 +11,6 @@ interface SectionTitleProps {
 export default function SectionTitle({
   subtitle,
   title,
-  highlights,
   description,
   align = "center",
   light = false,
@@ -36,7 +33,7 @@ export default function SectionTitle({
           align === "left" ? "title-underline-left" : ""
         } ${light ? "text-white" : "text-dark"}`}
       >
-        {highlights && highlights.length > 0 ? highlightText(title, highlights, light ? "light" : "dark") : title}
+        {title}
       </h2>
       {description && (
         <p

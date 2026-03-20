@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, MessageSquare, Clock, ShieldCheck } from "lucide-react";
-import { highlightText } from "@/lib/highlightText";
 
 export default function ConsultationCTA() {
   return (
@@ -33,7 +32,7 @@ export default function ConsultationCTA() {
           transition={{ delay: 0.1 }}
           className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
         >
-          {highlightText("FREE Consultation", ["Consultation"], "light")}
+          FREE Consultation
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -53,16 +52,16 @@ export default function ConsultationCTA() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-10"
         >
           {[
-            { icon: MessageSquare, title: "Personalized Guidance", highlight: "Guidance", desc: "Speak directly with an experienced tax consultant" },
-            { icon: ShieldCheck, title: "Clear Financial Insight", highlight: "Insight", desc: "Understand your tax and accounting position" },
-            { icon: Clock, title: "Year Round Support", highlight: "Support", desc: "Reliable help beyond tax season" },
-            { icon: Phone, title: "No Obligation", highlight: "Obligation", desc: "Get answers with no pressure" },
+            { icon: MessageSquare, title: "Personalized Guidance", desc: "Speak directly with an experienced tax consultant" },
+            { icon: ShieldCheck, title: "Clear Financial Insight", desc: "Understand your tax and accounting position" },
+            { icon: Clock, title: "Year Round Support", desc: "Reliable help beyond tax season" },
+            { icon: Phone, title: "No Obligation", desc: "Get answers with no pressure" },
           ].map((item) => (
             <div key={item.title} className="text-center">
               <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center">
                 <item.icon className="w-6 h-6 text-gold-400" />
               </div>
-              <h3 className="text-sm font-semibold mb-1">{highlightText(item.title, [item.highlight], "light")}</h3>
+              <h3 className="text-sm font-semibold mb-1">{item.title}</h3>
               <p className="text-xs text-white/70">{item.desc}</p>
             </div>
           ))}

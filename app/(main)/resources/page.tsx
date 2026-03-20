@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
-import { highlightText } from "@/lib/highlightText";
 import {
   HelpCircle,
   DollarSign,
@@ -27,7 +26,6 @@ export const metadata: Metadata = {
 interface ResourceLink {
   icon: LucideIcon;
   title: string;
-  highlight?: string;
   description: string;
   href: string;
   accent: string;
@@ -37,7 +35,6 @@ const resources: ResourceLink[] = [
   {
     icon: HelpCircle,
     title: "Frequently Asked Questions",
-    highlight: "Questions",
     description:
       "Find answers to the most common questions about our tax and accounting services, filing process, and business support.",
     href: "/faqs",
@@ -46,7 +43,6 @@ const resources: ResourceLink[] = [
   {
     icon: DollarSign,
     title: "Pricing Plans",
-    highlight: "Pricing",
     description:
       "View our individual and business tax preparation pricing tiers. Contact us for a personalized quote based on your needs.",
     href: "/pricing",
@@ -55,7 +51,6 @@ const resources: ResourceLink[] = [
   {
     icon: Star,
     title: "Client Testimonials",
-    highlight: "Testimonials",
     description:
       "Read what our clients say about working with MBS TAXES. We maintain a 5.0 star rating on Google with 16 reviews.",
     href: "/testimonials",
@@ -64,7 +59,6 @@ const resources: ResourceLink[] = [
   {
     icon: MessageSquare,
     title: "Contact Us",
-    highlight: "Contact",
     description:
       "Get in touch with our team for a free consultation. We are available by phone, email, or at any of our office locations.",
     href: "/contact",
@@ -73,7 +67,6 @@ const resources: ResourceLink[] = [
   {
     icon: FolderOpen,
     title: "Client Resource Center",
-    highlight: "Resource",
     description:
       "Access practical tools including newsletters, tax tips, and tax videos to stay informed and prepared.",
     href: "/resources/client-resource-center",
@@ -82,7 +75,6 @@ const resources: ResourceLink[] = [
   {
     icon: Newspaper,
     title: "Tax & Business Newsletter",
-    highlight: "Newsletter",
     description:
       "Stay informed with updates on tax laws, financial planning, and business guidance.",
     href: "/resources/newsletters",
@@ -91,7 +83,6 @@ const resources: ResourceLink[] = [
   {
     icon: Mail,
     title: "Client Update Newsletter",
-    highlight: "Newsletter",
     description:
       "Important tax changes, deadlines, and service updates from MBS TAXES.",
     href: "/resources/client-update-newsletter",
@@ -100,7 +91,6 @@ const resources: ResourceLink[] = [
   {
     icon: Lightbulb,
     title: "Tax Tips",
-    highlight: "Tips",
     description:
       "Practical strategies to reduce tax liability and improve financial organization.",
     href: "/resources/tax-tips",
@@ -109,7 +99,6 @@ const resources: ResourceLink[] = [
   {
     icon: Video,
     title: "Tax Videos",
-    highlight: "Videos",
     description:
       "Watch informative videos on tax preparation, accounting, and financial planning.",
     href: "/resources/tax-videos",
@@ -141,7 +130,6 @@ export default function ResourcesPage() {
           <SectionTitle
             subtitle="Explore"
             title="Resources for Our Clients"
-            highlights={["Resources"]}
             description="Access the information and tools you need to stay informed about our services, pricing, and how to work with our team."
           />
 
@@ -166,7 +154,7 @@ export default function ResourcesPage() {
                         <Icon className={`w-8 h-8 ${iconColor}`} />
                       </div>
                       <h3 className="font-heading text-xl font-semibold text-dark mb-2 group-hover:text-navy-500 transition-colors duration-300">
-                        {resource.highlight ? highlightText(resource.title, [resource.highlight]) : resource.title}
+                        {resource.title}
                       </h3>
                       <p className="text-muted text-sm leading-relaxed mb-4">
                         {resource.description}

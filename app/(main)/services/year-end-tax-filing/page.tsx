@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
-import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Year End Tax Filing Services in Los Angeles",
@@ -21,10 +20,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Accurate Filing", highlight: "Accurate", desc: "Every return is reviewed for accuracy and compliance" },
-  { title: "Timely Submission", highlight: "Timely", desc: "Ensuring your returns are filed before deadlines" },
-  { title: "Full Document Review", highlight: "Document", desc: "Thorough review of all tax documents before filing" },
+  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
+  { title: "Accurate Filing", desc: "Every return is reviewed for accuracy and compliance" },
+  { title: "Timely Submission", desc: "Ensuring your returns are filed before deadlines" },
+  { title: "Full Document Review", desc: "Thorough review of all tax documents before filing" },
 ];
 
 const whoBenefits = [
@@ -46,7 +45,6 @@ export default function YearEndTaxFilingPage() {
         bgImage="/images/pexels-mizunokozuki-12903182.jpg"
         primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
-        highlights={["Filing", "Los Angeles"]}
         compact
       />
 
@@ -58,7 +56,6 @@ export default function YearEndTaxFilingPage() {
               <SectionTitle
                 subtitle="Year End Filing"
                 title="File With Confidence"
-                highlights={["Confidence"]}
                 align="left"
               />
               <p className="text-muted leading-relaxed text-lg">
@@ -96,7 +93,6 @@ export default function YearEndTaxFilingPage() {
           <SectionTitle
             subtitle="What We Provide"
             title="Year End Tax Filing Services Include"
-            highlights={["Filing", "Services"]}
             description="Our year end filing services cover everything you need to complete your tax returns accurately and on time."
           />
           <div className="max-w-2xl mx-auto mt-8">
@@ -121,14 +117,13 @@ export default function YearEndTaxFilingPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose MBS TAXES"
-            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -143,7 +138,6 @@ export default function YearEndTaxFilingPage() {
           <SectionTitle
             subtitle="Who Benefits"
             title="Who Benefits from Year End Tax Filing"
-            highlights={["Benefits", "Filing"]}
             description="Our year end tax filing services are designed for individuals and businesses who need accurate, timely filing support."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

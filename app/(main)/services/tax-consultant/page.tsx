@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
-import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Tax Consultant Services in Los Angeles",
@@ -23,10 +22,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Decades of Experience", highlight: "Experience", desc: "Over 30 years of tax preparation expertise" },
-  { title: "Year Round Support", highlight: "Support", desc: "Available beyond tax season for ongoing guidance" },
-  { title: "Personalized Service", highlight: "Personalized", desc: "Tailored solutions for your unique tax situation" },
+  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
+  { title: "Decades of Experience", desc: "Over 30 years of tax preparation expertise" },
+  { title: "Year Round Support", desc: "Available beyond tax season for ongoing guidance" },
+  { title: "Personalized Service", desc: "Tailored solutions for your unique tax situation" },
 ];
 
 const whoBenefits = [
@@ -43,7 +42,6 @@ export default function TaxConsultantPage() {
     <>
       <Hero
         title="Tax Consultant Services in Los Angeles"
-        highlights={["Consultant", "Los Angeles"]}
         subtitle="Expert Tax Guidance You Can Trust"
         description="MBS TAXES provides dependable tax consultant services to help individuals and businesses navigate tax preparation, planning, and compliance with confidence."
         bgImage="/images/pexels-yankrukov-7693717.jpg"
@@ -60,7 +58,6 @@ export default function TaxConsultantPage() {
               <SectionTitle
                 subtitle="Our Tax Consultant Services"
                 title="Comprehensive Tax Solutions"
-                highlights={["Comprehensive"]}
                 align="left"
               />
               <p className="text-muted leading-relaxed text-lg">
@@ -98,7 +95,6 @@ export default function TaxConsultantPage() {
           <SectionTitle
             subtitle="What We Provide"
             title="Tax Consultant Services Include"
-            highlights={["Consultant", "Services"]}
             description="Our team delivers a full range of tax consultant services to help you stay compliant and make informed financial decisions."
           />
           <div className="max-w-2xl mx-auto mt-8">
@@ -123,14 +119,13 @@ export default function TaxConsultantPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose MBS TAXES"
-            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -145,7 +140,6 @@ export default function TaxConsultantPage() {
           <SectionTitle
             subtitle="Who Benefits"
             title="Who Benefits from Tax Consultant Services"
-            highlights={["Benefits", "Services"]}
             description="Our tax consultant services are designed for a wide range of clients who need dependable guidance and accurate tax preparation."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

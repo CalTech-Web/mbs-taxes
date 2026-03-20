@@ -15,7 +15,6 @@ export default function NewslettersPage() {
     <>
       <Hero
         title="Tax and Business Newsletter"
-        highlights={["Newsletter"]}
         subtitle="Stay Informed with the Latest Updates"
         description="The MBS TAXES Tax and Business Newsletter provides valuable updates on tax laws, financial planning, and business guidance to help you stay compliant, organized, and prepared year round."
         bgImage="/images/pexels-yankrukov-7792761.jpg"
@@ -27,7 +26,6 @@ export default function NewslettersPage() {
           <SectionTitle
             subtitle="Newsletter"
             title="Tax & Business Insights"
-            highlights={["Insights"]}
           />
           <div className="mt-8">
             <ExternalWidget src="https://widget.resourcesforclients.com/newsletter/TBL.js?u=T9LHWPeABJsm&n=TBL" />

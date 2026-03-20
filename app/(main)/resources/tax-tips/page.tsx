@@ -15,7 +15,6 @@ export default function TaxTipsPage() {
     <>
       <Hero
         title="Tax Tips"
-        highlights={["Tips"]}
         subtitle="Helpful Guidance for Tax Preparation"
         description="MBS TAXES provides practical tax tips to help individuals and businesses stay compliant, reduce tax liability, and improve financial organization."
         bgImage="/images/pexels-yankrukov-7792785.jpg"
@@ -27,7 +26,6 @@ export default function TaxTipsPage() {
           <SectionTitle
             subtitle="Expert Tips"
             title="Tax Tips & Strategies"
-            highlights={["Strategies"]}
           />
           <div className="mt-8">
             <ExternalWidget src="https://widget.resourcesforclients.com/wtt/tips.js?u=T9LHWPeABJsm" />

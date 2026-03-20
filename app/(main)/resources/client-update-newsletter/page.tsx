@@ -15,7 +15,6 @@ export default function ClientUpdateNewsletterPage() {
     <>
       <Hero
         title="Client Update Newsletter"
-        highlights={["Newsletter"]}
         subtitle="Important Tax Updates & Announcements"
         description="The MBS TAXES Client Update Newsletter keeps you informed about important tax changes, deadlines, and service updates to help you remain compliant, organized, and prepared."
         bgImage="/images/pexels-mikhail-nilov-6931334.jpg"
@@ -27,7 +26,6 @@ export default function ClientUpdateNewsletterPage() {
           <SectionTitle
             subtitle="Client Updates"
             title="Stay Connected"
-            highlights={["Connected"]}
           />
           <div className="mt-8">
             <ExternalWidget src="https://widget.resourcesforclients.com/newsletter/CU.js?u=T9LHWPeABJsm&n=CU" />

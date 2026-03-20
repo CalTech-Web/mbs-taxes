@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
-import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -17,7 +16,6 @@ export default function PrivacyPolicyPage() {
         title="Privacy Policy"
         subtitle="Mossberg Business Services"
         bgImage="/images/pexels-khwanchai-12885860.jpg"
-        highlights={["Privacy"]}
         compact
       />
 
@@ -26,7 +24,6 @@ export default function PrivacyPolicyPage() {
           <SectionTitle
             subtitle="Legal"
             title="Our Privacy Practices"
-            highlights={["Privacy"]}
             description="This Privacy Policy explains how Mossberg Business Services (&ldquo;MBS TAXES,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and protects your personal information when you use our website and services."
           />
 
@@ -35,7 +32,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Information We Collect", ["Information"])}
+                  Information We Collect
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-3">
                   We may collect the following types of information when you use
@@ -66,7 +63,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal delay={0.05}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("How We Use Your Information", ["Use", "Information"])}
+                  How We Use Your Information
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-3">
                   We use the information we collect to:
@@ -100,7 +97,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal delay={0.1}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Information Sharing", ["Information"])}
+                  Information Sharing
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   We do not sell, trade, or rent your personal information to
@@ -119,7 +116,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal delay={0.15}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Data Protection", ["Protection"])}
+                  Data Protection
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   We implement industry-standard security measures to protect
@@ -154,7 +151,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal delay={0.25}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Changes to This Policy", ["Changes"])}
+                  Changes to This Policy
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   We reserve the right to update or modify this Privacy Policy
@@ -170,7 +167,7 @@ export default function PrivacyPolicyPage() {
             <ScrollReveal delay={0.3}>
               <div className="prose-section">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-3">
-                  {highlightText("Contact Us", ["Contact"])}
+                  Contact Us
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-3">
                   If you have any questions or concerns about this Privacy

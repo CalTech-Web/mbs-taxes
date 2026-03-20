@@ -60,7 +60,6 @@ export default function TestimonialsPage() {
     <>
       <Hero
         title="Client Testimonials"
-        highlights={["Testimonials"]}
         subtitle="What Our Clients Say"
         bgImage="/images/pexels-karola-g-7876374.jpg"
         compact
@@ -72,7 +71,6 @@ export default function TestimonialsPage() {
           <SectionTitle
             subtitle="Google Reviews"
             title="5.0 Stars from Our Clients"
-            highlights={["Stars", "Clients"]}
             description="We are proud to maintain a perfect 5.0 rating on Google with 16 reviews from real clients who trust MBS TAXES with their tax and accounting needs."
           />
 

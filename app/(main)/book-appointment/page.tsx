@@ -3,7 +3,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
-import { highlightText } from "@/lib/highlightText";
 import { Calendar, Phone, MessageSquare, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -16,25 +15,21 @@ const features = [
   {
     icon: MessageSquare,
     title: "Personalized Guidance",
-    highlight: "Personalized",
     description: "Discuss your tax and accounting needs with an experienced consultant.",
   },
   {
     icon: Calendar,
     title: "Flexible Scheduling",
-    highlight: "Flexible",
     description: "We work around your schedule with appointments Monday through Saturday.",
   },
   {
     icon: Clock,
     title: "Quick Response",
-    highlight: "Quick",
     description: "We respond promptly to all inquiries and appointment requests.",
   },
   {
     icon: Phone,
     title: "No Obligation",
-    highlight: "Obligation",
     description: "Your initial consultation is completely free with no pressure.",
   },
 ];
@@ -44,7 +39,6 @@ export default function BookAppointmentPage() {
     <>
       <Hero
         title="Book an Appointment"
-        highlights={["Appointment"]}
         subtitle="Schedule Your Free Consultation"
         description="Ready to take control of your taxes and finances? Schedule a free consultation with our team to discuss your needs and learn how MBS TAXES can help."
         bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
@@ -56,7 +50,6 @@ export default function BookAppointmentPage() {
           <SectionTitle
             subtitle="Get Started"
             title="Schedule Your Appointment"
-            highlights={["Appointment"]}
             description="Whether you need help with personal taxes, business accounting, or tax planning, our team is ready to assist. Contact us to schedule a convenient time to meet."
           />
 
@@ -70,7 +63,7 @@ export default function BookAppointmentPage() {
                       <Icon className="w-7 h-7 text-navy-500" />
                     </div>
                     <h3 className="font-heading text-base font-semibold text-dark mb-2">
-                      {highlightText(feature.title, [feature.highlight])}
+                      {feature.title}
                     </h3>
                     <p className="text-muted text-sm leading-relaxed">
                       {feature.description}

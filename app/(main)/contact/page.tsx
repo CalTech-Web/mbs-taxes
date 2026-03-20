@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
-import { highlightText } from "@/lib/highlightText";
 import { Phone, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function ContactPage() {
     <>
       <Hero
         title="Contact MBS TAXES"
-        highlights={["Contact"]}
         subtitle="Speak with a Tax Consultant"
         bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
         compact
@@ -36,7 +34,6 @@ export default function ContactPage() {
           <SectionTitle
             subtitle="Get in Touch"
             title="We're Here to Help"
-            highlights={["Help"]}
             description="Whether you have a question, need a consultation, or are ready to get started, our team is available to assist you."
           />
 
@@ -45,7 +42,7 @@ export default function ContactPage() {
             <ScrollReveal>
               <div className="card-luxury card-navy rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <h3 className="font-heading text-xl font-semibold text-dark mb-6">
-                  {highlightText("Send Us a Message", ["Message"])}
+                  Send Us a Message
                 </h3>
                 <ContactForm />
               </div>
@@ -58,7 +55,7 @@ export default function ContactPage() {
                 <div className="card-luxury card-gold rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
                   <h3 className="font-heading text-xl font-semibold text-dark mb-5 flex items-center gap-3">
                     <MapPin className="w-6 h-6 text-navy-500" />
-                    {highlightText("Corporate Headquarters", ["Corporate"])}
+                    Corporate Headquarters
                   </h3>
                   <address className="not-italic text-muted text-sm leading-relaxed space-y-3">
                     <p>
@@ -86,7 +83,7 @@ export default function ContactPage() {
                 <div className="card-luxury card-blue rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
                   <h3 className="font-heading text-xl font-semibold text-dark mb-5 flex items-center gap-3">
                     <Phone className="w-6 h-6 text-navy-500" />
-                    {highlightText("Additional Offices", ["Additional"])}
+                    Additional Offices
                   </h3>
                   <div className="space-y-3">
                     {offices.map((office) => (
@@ -112,7 +109,7 @@ export default function ContactPage() {
                 <div className="card-luxury card-navy rounded-2xl p-8 border border-navy-100/20 ring-1 ring-navy-100/10">
                   <h3 className="font-heading text-xl font-semibold text-dark mb-5 flex items-center gap-3">
                     <Clock className="w-6 h-6 text-navy-500" />
-                    {highlightText("Business Hours", ["Business"])}
+                    Business Hours
                   </h3>
                   <div className="space-y-2 text-sm text-muted">
                     <div className="flex items-center justify-between">

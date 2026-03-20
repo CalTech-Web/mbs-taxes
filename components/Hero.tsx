@@ -3,11 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import WaveDivider from "@/components/WaveDivider";
-import { highlightText } from "@/lib/highlightText";
 
 interface HeroProps {
   title: string;
-  highlights?: string[];
   subtitle?: string;
   description?: string;
   bgImage: string;
@@ -18,7 +16,6 @@ interface HeroProps {
 
 export default function Hero({
   title,
-  highlights,
   subtitle,
   description,
   bgImage,
@@ -62,7 +59,7 @@ export default function Hero({
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto"
         >
-          {highlights && highlights.length > 0 ? highlightText(title, highlights, "light") : title}
+          {title}
         </motion.h1>
         {description && (
           <motion.p

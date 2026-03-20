@@ -4,7 +4,6 @@ import SectionTitle from "@/components/SectionTitle";
 import TeamCard from "@/components/TeamCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
-import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -54,7 +53,6 @@ export default function AboutPage() {
     <>
       <Hero
         title="About MBS TAXES"
-        highlights={["TAXES"]}
         subtitle="Expert Tax Solutions & Accounting Services"
         description="We are committed to the financial success of our clients and businesses we serve."
         bgImage="/images/pexels-silverkblack-23496869.jpg"
@@ -69,7 +67,6 @@ export default function AboutPage() {
           <SectionTitle
             subtitle="Who We Are"
             title="Veteran Leadership You Can Trust"
-            highlights={["Leadership", "Trust"]}
             description="MBS TAXES is a veteran-owned firm providing dependable tax consultant and accounting services in Los Angeles. With decades of professional experience, our team supports individuals and businesses with accurate tax preparation, accounting, and financial guidance."
           />
         </div>
@@ -79,7 +76,7 @@ export default function AboutPage() {
       <section className="py-24 bg-light relative overflow-hidden">
         <div className="orb orb-navy orb-animate w-64 h-64 -top-20 -right-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <SectionTitle subtitle="Our Team" title="Meet the Leadership Team" highlights={["Leadership"]} />
+          <SectionTitle subtitle="Our Team" title="Meet the Leadership Team" />
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, i) => (
               <TeamCard key={member.name} {...member} index={i} />
@@ -94,12 +91,11 @@ export default function AboutPage() {
           <SectionTitle
             subtitle="Expertise You Can Trust"
             title="Comprehensive Services"
-            highlights={["Comprehensive"]}
             description="MBS TAXES provides flexible accounting and tax services that grow with you."
           />
           <div className="grid md:grid-cols-3 gap-10 mt-8">
             <ScrollReveal>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">{highlightText("Services Provided", ["Services"])}</h3>
+              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Services Provided</h3>
               <ul className="space-y-2">
                 {services.map((s) => (
                   <li key={s} className="flex items-center gap-2 text-sm text-muted">
@@ -110,7 +106,7 @@ export default function AboutPage() {
               </ul>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">{highlightText("Industries Served", ["Industries"])}</h3>
+              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Industries Served</h3>
               <ul className="space-y-2">
                 {industries.map((s) => (
                   <li key={s} className="flex items-center gap-2 text-sm text-muted">
@@ -121,7 +117,7 @@ export default function AboutPage() {
               </ul>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">{highlightText("Software Expertise", ["Software"])}</h3>
+              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Software Expertise</h3>
               <ul className="space-y-2">
                 {software.map((s) => (
                   <li key={s} className="flex items-center gap-2 text-sm text-muted">
