@@ -1,6 +1,6 @@
 "use client";
 
-import { Calculator, BookOpen, Building2, Briefcase, FileText, Monitor } from "lucide-react";
+import { Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, Shield, Clock, Award, MapPin } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -59,10 +59,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Decades of Experience", desc: "Supporting individuals, small businesses, and corporations" },
-  { title: "Year Round Tax Support", desc: "Not just during filing season" },
-  { title: "Local Expertise", desc: "Serving Lawndale, Long Beach, and Palm Springs" },
+  { icon: Shield, title: "Veteran Owned", desc: "Discipline, integrity, and accountability" },
+  { icon: Clock, title: "Decades of Experience", desc: "Supporting individuals and corporations" },
+  { icon: Award, title: "Year Round Support", desc: "Not just during filing season" },
+  { icon: MapPin, title: "Local Expertise", desc: "Serving Lawndale, Long Beach, and Palm Springs" },
 ];
 
 const whoWeServe = [
@@ -82,15 +82,13 @@ export default function ServicesPage() {
         subtitle="Professional Solutions for Every Need"
         description="MBS TAXES provides comprehensive tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies."
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
-        primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        primaryCta={{ label: "FREE Consultation", href: "/contact" }}
+        secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
       />
 
       {/* Services Grid */}
-      <section className="py-24 bg-light relative overflow-hidden">
-        <div className="orb orb-gold orb-animate w-72 h-72 -top-20 -right-20" />
-        <div className="orb orb-navy orb-animate w-56 h-56 -bottom-16 -left-16" style={{ animationDelay: "5s" }} />
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="What We Offer"
@@ -105,21 +103,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-navy-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-400/[0.02] to-transparent pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <SectionTitle
-            subtitle="Why MBS Taxes"
-            title="Why Choose Us"
-            light
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      {/* Why Choose — compact strip */}
+      <section className="py-12 bg-navy-800 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChoose.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
-                  <p className="text-white/80 text-sm">{item.desc}</p>
+              <ScrollReveal key={item.title} delay={i * 0.08}>
+                <div className="flex items-start gap-3">
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-gold-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-sm font-semibold text-gold-400">{item.title}</h3>
+                    <p className="text-white/70 text-xs mt-0.5">{item.desc}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -127,22 +124,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="py-24 section-depth relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <SectionTitle
-            subtitle="Who We Serve"
-            title="Trusted by Individuals & Businesses"
-            description="Headquartered in Lawndale, California, we proudly serve businesses and individuals across Los Angeles County, the United States, and internationally."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {whoWeServe.map((type, i) => (
-              <ScrollReveal key={type} delay={i * 0.08}>
-                <div className="card-luxury card-navy rounded-xl p-5 text-center h-full border border-navy-100/20">
-                  <p className="font-heading text-sm font-semibold text-dark">{type}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+      {/* Who We Serve — inline pills */}
+      <section className="py-16 section-depth">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+            <ScrollReveal className="shrink-0">
+              <h2 className="font-heading text-2xl font-bold text-dark">Who We Serve</h2>
+              <p className="mt-1 text-sm text-muted">Trusted by individuals & businesses</p>
+            </ScrollReveal>
+            <div className="flex flex-wrap gap-2.5">
+              {whoWeServe.map((type, i) => (
+                <ScrollReveal key={type} delay={i * 0.05}>
+                  <span className="inline-block px-5 py-2.5 rounded-full bg-white border border-navy-200/40 text-sm font-semibold text-navy-700 shadow-sm hover:bg-navy-500 hover:text-white hover:border-navy-500 transition-all duration-300">
+                    {type}
+                  </span>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

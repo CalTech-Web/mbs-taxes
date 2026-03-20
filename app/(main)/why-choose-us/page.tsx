@@ -79,7 +79,7 @@ export default function WhyChooseUsPage() {
       />
 
       {/* 1040 Client Protection */}
-      <section className="py-24 section-depth">
+      <section className="py-20 section-depth">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Client Protection"
@@ -102,7 +102,7 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Notices & Audit Assistance */}
-      <section className="py-24 bg-light relative overflow-hidden">
+      <section className="py-16 bg-light relative overflow-hidden">
         <div className="orb orb-navy orb-animate w-64 h-64 -top-20 -right-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
@@ -158,7 +158,7 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* Identity Theft Restoration */}
-      <section className="py-24 section-depth">
+      <section className="py-16 section-depth">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Identity Protection"
@@ -181,7 +181,7 @@ export default function WhyChooseUsPage() {
       </section>
 
       {/* 4-Step Process */}
-      <section className="py-24 bg-navy-800 text-white relative overflow-hidden">
+      <section className="py-16 bg-navy-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-400/[0.02] to-transparent pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6">
           <SectionTitle

@@ -29,7 +29,7 @@ export default function ContactPage() {
         compact
       />
 
-      <section className="py-24 section-depth">
+      <section className="py-20 section-depth">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Get in Touch"

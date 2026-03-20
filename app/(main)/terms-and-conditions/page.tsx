@@ -19,8 +19,8 @@ export default function TermsAndConditionsPage() {
         compact
       />
 
-      <section className="py-24 section-depth">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-16 section-depth">
+        <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Legal"
             title="Terms of Service"

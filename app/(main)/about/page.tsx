@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import SectionTitle from "@/components/SectionTitle";
 import TeamCard from "@/components/TeamCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
@@ -57,26 +56,26 @@ export default function AboutPage() {
         description="We are committed to the financial success of our clients and businesses we serve."
         bgImage="/images/pexels-silverkblack-23496869.jpg"
         primaryCta={{ label: "Talk to a Tax Consultant", href: "/contact" }}
-        secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
       />
 
-      {/* About Intro */}
-      <section className="py-24 section-depth">
+      {/* Intro + Team — merged into one section */}
+      <section className="py-20 section-depth">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle
-            subtitle="Who We Are"
-            title="Veteran Leadership You Can Trust"
-            description="MBS TAXES is a veteran-owned firm providing dependable tax consultant and accounting services in Los Angeles. With decades of professional experience, our team supports individuals and businesses with accurate tax preparation, accounting, and financial guidance."
-          />
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-24 bg-light relative overflow-hidden">
-        <div className="orb orb-navy orb-animate w-64 h-64 -top-20 -right-20" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <SectionTitle subtitle="Our Team" title="Meet the Leadership Team" />
+          <div className="max-w-3xl mb-14">
+            <ScrollReveal>
+              <span className="inline-block mb-3 text-sm font-semibold tracking-widest uppercase text-gold-400">
+                Who We Are
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
+                Veteran Leadership You Can Trust
+              </h2>
+              <p className="mt-5 text-muted leading-relaxed text-lg">
+                MBS TAXES is a veteran-owned firm providing dependable tax consultant and accounting services in Los Angeles. With decades of professional experience, our team supports individuals and businesses with accurate tax preparation, accounting, and financial guidance.
+              </p>
+            </ScrollReveal>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, i) => (
               <TeamCard key={member.name} {...member} index={i} />
@@ -85,47 +84,57 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Services, Industries, Software */}
-      <section className="py-24 section-depth">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle
-            subtitle="Expertise You Can Trust"
-            title="Comprehensive Services"
-            description="MBS TAXES provides flexible accounting and tax services that grow with you."
-          />
-          <div className="grid md:grid-cols-3 gap-10 mt-8">
+      {/* Services, Industries, Software — pill/tag chips in cards */}
+      <section className="py-16 bg-light relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-3 gap-8">
             <ScrollReveal>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Services Provided</h3>
-              <ul className="space-y-2">
-                {services.map((s) => (
-                  <li key={s} className="flex items-center gap-2 text-sm text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-navy-500 shrink-0" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-white rounded-2xl p-7 border border-navy-100/20 shadow-sm h-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-500/10 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-navy-500" />
+                  <span className="text-xs font-semibold text-navy-600 uppercase tracking-wide">Services</span>
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-dark mb-4">Services Provided</h3>
+                <div className="flex flex-wrap gap-2">
+                  {services.map((s) => (
+                    <span key={s} className="inline-block px-3 py-1.5 rounded-full bg-navy-50 text-xs font-medium text-navy-700 border border-navy-100/30">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Industries Served</h3>
-              <ul className="space-y-2">
-                {industries.map((s) => (
-                  <li key={s} className="flex items-center gap-2 text-sm text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white rounded-2xl p-7 border border-navy-100/20 shadow-sm h-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-400/10 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-gold-400" />
+                  <span className="text-xs font-semibold text-gold-600 uppercase tracking-wide">Industries</span>
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-dark mb-4">Industries Served</h3>
+                <div className="flex flex-wrap gap-2">
+                  {industries.map((s) => (
+                    <span key={s} className="inline-block px-3 py-1.5 rounded-full bg-gold-50 text-xs font-medium text-gold-700 border border-gold-200/30">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <h3 className="font-heading text-xl font-semibold text-dark mb-4">Software Expertise</h3>
-              <ul className="space-y-2">
-                {software.map((s) => (
-                  <li key={s} className="flex items-center gap-2 text-sm text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
+            <ScrollReveal delay={0.2}>
+              <div className="bg-white rounded-2xl p-7 border border-navy-100/20 shadow-sm h-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-teal-500" />
+                  <span className="text-xs font-semibold text-teal-600 uppercase tracking-wide">Software</span>
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-dark mb-4">Software Expertise</h3>
+                <div className="flex flex-wrap gap-2">
+                  {software.map((s) => (
+                    <span key={s} className="inline-block px-3 py-1.5 rounded-full bg-teal-50 text-xs font-medium text-teal-700 border border-teal-200/30">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </div>

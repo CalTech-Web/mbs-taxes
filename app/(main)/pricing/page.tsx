@@ -126,7 +126,7 @@ export default function PricingPage() {
       />
 
       {/* Individual Plans */}
-      <section className="py-24 section-depth">
+      <section className="py-20 section-depth">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Individual Returns"
@@ -142,7 +142,7 @@ export default function PricingPage() {
       </section>
 
       {/* Business Plans */}
-      <section className="py-24 bg-light relative overflow-hidden">
+      <section className="py-16 bg-light relative overflow-hidden">
         <div className="orb orb-gold orb-animate w-72 h-72 -top-20 -right-20" />
         <div className="orb orb-navy orb-animate w-56 h-56 -bottom-16 -left-16" style={{ animationDelay: "5s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

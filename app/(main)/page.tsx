@@ -105,7 +105,7 @@ export default function HomePage() {
       <StatisticsCounter />
 
       {/* Services */}
-      <section className="py-24 bg-light relative overflow-hidden">
+      <section className="py-20 bg-light relative overflow-hidden">
         <div className="orb orb-gold orb-animate w-72 h-72 -top-20 -right-20" />
         <div className="orb orb-navy orb-animate w-56 h-56 -bottom-16 -left-16" style={{ animationDelay: "5s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
 
       {/* About / Welcome */}
-      <section className="py-24 section-depth relative overflow-hidden">
+      <section className="py-20 section-depth relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
@@ -175,38 +175,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-navy-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gold-400/[0.02] to-transparent pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <SectionTitle
-            subtitle="Why MBS Taxes"
-            title="Why Choose Us"
-            light
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {whyChoose.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
-                  <p className="text-white/80 text-sm">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+      {/* Why Choose Us — compact strip */}
+      <section className="py-14 bg-navy-800 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
+            <div className="shrink-0">
+              <h2 className="font-heading text-2xl font-bold text-white">Why Choose Us</h2>
+              <Link
+                href="/why-choose-us"
+                className="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors"
+              >
+                Learn More <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1">
+              {whyChoose.map((item, i) => (
+                <ScrollReveal key={item.title} delay={i * 0.08}>
+                  <div>
+                    <h3 className="font-heading text-sm font-semibold text-gold-400">{item.title}</h3>
+                    <p className="text-white/70 text-xs mt-0.5">{item.desc}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-          <ScrollReveal delay={0.3} className="mt-10 text-center">
-            <Link
-              href="/why-choose-us"
-              className="btn-shine inline-flex items-center gap-2 px-8 py-3.5 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg"
-            >
-              Learn More <ArrowRight className="w-4 h-4" />
-            </Link>
-          </ScrollReveal>
         </div>
       </section>
 
       {/* Who We Serve */}
-      <section className="py-24 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
         <div className="orb orb-gold orb-animate w-64 h-64 -top-16 -left-16 opacity-30" />
         <div className="orb orb-navy orb-animate w-48 h-48 -bottom-12 -right-12 opacity-20" style={{ animationDelay: "4s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
