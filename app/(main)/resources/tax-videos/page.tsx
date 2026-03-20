@@ -15,6 +15,7 @@ export default function TaxVideosPage() {
     <>
       <Hero
         title="Tax Videos"
+        highlights={["Videos"]}
         subtitle="Watch & Learn About Tax Topics"
         description="MBS TAXES offers informative tax videos designed to help individuals and businesses better understand tax preparation, accounting, and financial planning."
         bgImage="/images/pexels-mikhail-nilov-7735691.jpg"
@@ -26,6 +27,7 @@ export default function TaxVideosPage() {
           <SectionTitle
             subtitle="Video Library"
             title="Tax & Financial Videos"
+            highlights={["Financial"]}
           />
           <div className="mt-8">
             <ExternalWidget src="https://widget.resourcesforclients.com/taxvid/tv-ncd.js?u=T9LHWPeABJsm" />

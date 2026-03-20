@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "QuickBooks Tax Filing Services",
@@ -21,10 +22,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
-  { title: "QuickBooks Certified", desc: "Deep expertise across QuickBooks Desktop and Online" },
-  { title: "Book Cleanup Specialists", desc: "We organize and correct your financial records" },
-  { title: "Full Filing Support", desc: "From QuickBooks data to completed tax returns" },
+  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
+  { title: "QuickBooks Certified", highlight: "Certified", desc: "Deep expertise across QuickBooks Desktop and Online" },
+  { title: "Book Cleanup Specialists", highlight: "Specialists", desc: "We organize and correct your financial records" },
+  { title: "Full Filing Support", highlight: "Filing", desc: "From QuickBooks data to completed tax returns" },
 ];
 
 const whoBenefits = [
@@ -46,6 +47,7 @@ export default function QuickBooksPage() {
         bgImage="/images/pexels-yankrukov-7693186.jpg"
         primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        highlights={["QuickBooks"]}
         compact
       />
 
@@ -57,6 +59,7 @@ export default function QuickBooksPage() {
               <SectionTitle
                 subtitle="QuickBooks Services"
                 title="Expert QuickBooks Tax Filing Support"
+                highlights={["QuickBooks", "Support"]}
                 align="left"
               />
               <p className="text-muted leading-relaxed text-lg">
@@ -94,6 +97,7 @@ export default function QuickBooksPage() {
           <SectionTitle
             subtitle="What We Provide"
             title="QuickBooks Tax Filing Services Include"
+            highlights={["QuickBooks", "Services"]}
             description="Our QuickBooks services cover setup, maintenance, and tax filing to ensure your financial records are accurate and complete."
           />
           <div className="max-w-2xl mx-auto mt-8">
@@ -118,13 +122,14 @@ export default function QuickBooksPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose MBS TAXES"
+            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -139,6 +144,7 @@ export default function QuickBooksPage() {
           <SectionTitle
             subtitle="Who Benefits"
             title="Who Benefits from QuickBooks Tax Filing"
+            highlights={["Benefits", "QuickBooks"]}
             description="Our QuickBooks tax filing services are designed for businesses that rely on QuickBooks and need expert help with their financial records and tax returns."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

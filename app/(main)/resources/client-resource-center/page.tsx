@@ -15,6 +15,7 @@ export default function ClientResourceCenterPage() {
     <>
       <Hero
         title="Client Resource Center"
+        highlights={["Resource"]}
         subtitle="Helpful Information & Resources"
         description="The Client Resource Center provides valuable information to help individuals and businesses understand tax requirements, financial planning, and compliance."
         bgImage="/images/pexels-yankrukov-7792743.jpg"
@@ -26,6 +27,7 @@ export default function ClientResourceCenterPage() {
           <SectionTitle
             subtitle="Your Resources"
             title="Stay Informed & Prepared"
+            highlights={["Informed", "Prepared"]}
             description="MBS TAXES provides dependable tax consultant services in Los Angeles to help individuals and businesses prepare and file tax returns accurately and efficiently."
           />
           <div className="mt-8">

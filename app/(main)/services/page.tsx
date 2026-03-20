@@ -6,11 +6,13 @@ import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { highlightText } from "@/lib/highlightText";
 
 const services = [
   {
     icon: Calculator,
     title: "Tax Consultant",
+    highlights: ["Consultant"],
     description:
       "Expert guidance on tax planning, preparation, and compliance to reduce liabilities and avoid costly errors.",
     href: "/services/tax-consultant",
@@ -19,6 +21,7 @@ const services = [
   {
     icon: BookOpen,
     title: "Financial Accounting",
+    highlights: ["Accounting"],
     description:
       "Accurate bookkeeping, reporting, and financial statement preparation to understand your financial position.",
     href: "/services/financial-accounting",
@@ -27,6 +30,7 @@ const services = [
   {
     icon: Building2,
     title: "Corporate Tax & Accounting",
+    highlights: ["Corporate"],
     description:
       "Tax and accounting services for LLC, S Corp, and C Corp entities to maintain compliance and support growth.",
     href: "/services/corporate-tax",
@@ -35,6 +39,7 @@ const services = [
   {
     icon: Briefcase,
     title: "Business Consulting",
+    highlights: ["Consulting"],
     description:
       "Strategic guidance to strengthen operations, improve financial organization, and support long-term growth.",
     href: "/services/business-consulting",
@@ -43,6 +48,7 @@ const services = [
   {
     icon: FileText,
     title: "Year End Tax Filing",
+    highlights: ["Filing"],
     description:
       "Accurate year-end filing to ensure returns are prepared correctly and submitted on time.",
     href: "/services/year-end-tax-filing",
@@ -51,6 +57,7 @@ const services = [
   {
     icon: Monitor,
     title: "QuickBooks Tax Filing",
+    highlights: ["QuickBooks"],
     description:
       "QuickBooks setup, cleanup, and tax filing support to maintain accurate financial records.",
     href: "/services/quickbooks",
@@ -59,10 +66,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Decades of Experience", desc: "Supporting individuals, small businesses, and corporations" },
-  { title: "Year Round Tax Support", desc: "Not just during filing season" },
-  { title: "Local Expertise", desc: "Serving Lawndale, Long Beach, and Palm Springs" },
+  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
+  { title: "Decades of Experience", highlight: "Experience", desc: "Supporting individuals, small businesses, and corporations" },
+  { title: "Year Round Tax Support", highlight: "Support", desc: "Not just during filing season" },
+  { title: "Local Expertise", highlight: "Expertise", desc: "Serving Lawndale, Long Beach, and Palm Springs" },
 ];
 
 const whoWeServe = [
@@ -79,6 +86,7 @@ export default function ServicesPage() {
     <>
       <Hero
         title="Tax & Accounting Services"
+        highlights={["Services"]}
         subtitle="Professional Solutions for Every Need"
         description="MBS TAXES provides comprehensive tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies."
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
@@ -95,6 +103,7 @@ export default function ServicesPage() {
           <SectionTitle
             subtitle="What We Offer"
             title="Finance, Tax & Business Services"
+            highlights={["Finance", "Services"]}
             description="Professional tax consultant and accounting services designed to support individuals and organizations with accurate reporting, compliance, and financial clarity."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -112,13 +121,14 @@ export default function ServicesPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose Us"
+            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -133,6 +143,7 @@ export default function ServicesPage() {
           <SectionTitle
             subtitle="Who We Serve"
             title="Trusted by Individuals & Businesses"
+            highlights={["Trusted", "Businesses"]}
             description="Headquartered in Lawndale, California, we proudly serve businesses and individuals across Los Angeles County, the United States, and internationally."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

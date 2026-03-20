@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Corporate Tax and Accounting Services",
@@ -28,10 +29,10 @@ const entityTypes = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Multi-Entity Expertise", desc: "Experienced with LLC, S Corp, and C Corp structures" },
-  { title: "Compliance Focused", desc: "Ensuring your business meets all tax obligations" },
-  { title: "Financial Clarity", desc: "Accurate reporting for informed business decisions" },
+  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
+  { title: "Multi-Entity Expertise", highlight: "Multi-Entity", desc: "Experienced with LLC, S Corp, and C Corp structures" },
+  { title: "Compliance Focused", highlight: "Compliance", desc: "Ensuring your business meets all tax obligations" },
+  { title: "Financial Clarity", highlight: "Financial", desc: "Accurate reporting for informed business decisions" },
 ];
 
 const whoBenefits = [
@@ -51,6 +52,7 @@ export default function CorporateTaxPage() {
         subtitle="Expert Solutions for Business Entities"
         description="MBS TAXES delivers corporate tax and accounting services for LLC, S Corp, and C Corp entities to maintain compliance and support long-term growth."
         bgImage="/images/pexels-n-voitkevich-6863250.jpg"
+        highlights={["Corporate", "Services"]}
         primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -64,6 +66,7 @@ export default function CorporateTaxPage() {
               <SectionTitle
                 subtitle="Corporate Tax Solutions"
                 title="Tax & Accounting for Business Entities"
+                highlights={["Accounting", "Entities"]}
                 align="left"
               />
               <p className="text-muted leading-relaxed text-lg">
@@ -73,7 +76,7 @@ export default function CorporateTaxPage() {
                 From corporate tax return preparation to detailed financial statement reporting, we handle the complexities so you can focus on growing your business.
               </p>
               <div className="mt-6">
-                <h3 className="font-heading text-lg font-semibold text-dark mb-3">Entity Types We Serve</h3>
+                <h3 className="font-heading text-lg font-semibold text-dark mb-3">{highlightText("Entity Types We Serve", ["Entity"])}</h3>
                 <ul className="space-y-2">
                   {entityTypes.map((type) => (
                     <li key={type} className="flex items-center gap-3 text-base text-muted">
@@ -112,6 +115,7 @@ export default function CorporateTaxPage() {
           <SectionTitle
             subtitle="What We Provide"
             title="Corporate Tax & Accounting Services Include"
+            highlights={["Corporate", "Services"]}
             description="Our corporate services cover every aspect of tax and accounting for business entities."
           />
           <div className="max-w-2xl mx-auto mt-8">
@@ -136,13 +140,14 @@ export default function CorporateTaxPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose MBS TAXES"
+            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -157,6 +162,7 @@ export default function CorporateTaxPage() {
           <SectionTitle
             subtitle="Who Benefits"
             title="Who Benefits from Corporate Tax Services"
+            highlights={["Benefits", "Services"]}
             description="Our corporate tax and accounting services are built for business entities that need dependable compliance and reporting."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

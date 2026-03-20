@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
+import { highlightText } from "@/lib/highlightText";
 
 export type CardAccent = "navy" | "gold" | "blue" | "rose" | "teal" | "emerald";
 
@@ -18,6 +19,7 @@ const accentIconColors: Record<CardAccent, string> = {
 interface ServiceCardProps {
   icon: LucideIcon;
   title: string;
+  highlights?: string[];
   description: string;
   href: string;
   index?: number;
@@ -27,6 +29,7 @@ interface ServiceCardProps {
 export default function ServiceCard({
   icon: Icon,
   title,
+  highlights,
   description,
   href,
   index = 0,
@@ -51,7 +54,7 @@ export default function ServiceCard({
             <Icon className={`w-8 h-8 ${iconColor}`} />
           </div>
           <h3 className="font-heading text-xl font-semibold text-dark mb-2 group-hover:text-navy-500 transition-colors duration-300">
-            {title}
+            {highlights && highlights.length > 0 ? highlightText(title, highlights) : title}
           </h3>
           <p className="text-muted text-sm leading-relaxed mb-4">{description}</p>
           <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy-500 group-hover:text-gold-600 transition-colors duration-300">

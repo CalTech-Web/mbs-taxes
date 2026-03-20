@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { highlightText } from "@/lib/highlightText";
 
 export const metadata: Metadata = {
   title: "Financial Accounting Services in Los Angeles",
@@ -21,10 +22,10 @@ const services = [
 ];
 
 const whyChoose = [
-  { title: "Veteran Owned & Operated", desc: "Built on discipline, integrity, and accountability" },
-  { title: "Accurate Reporting", desc: "Precise financial statements you can rely on" },
-  { title: "QuickBooks Expertise", desc: "Seamless integration with your accounting software" },
-  { title: "Flexible Reporting", desc: "Monthly, quarterly, or annual reporting to fit your needs" },
+  { title: "Veteran Owned & Operated", highlight: "Veteran", desc: "Built on discipline, integrity, and accountability" },
+  { title: "Accurate Reporting", highlight: "Accurate", desc: "Precise financial statements you can rely on" },
+  { title: "QuickBooks Expertise", highlight: "Expertise", desc: "Seamless integration with your accounting software" },
+  { title: "Flexible Reporting", highlight: "Flexible", desc: "Monthly, quarterly, or annual reporting to fit your needs" },
 ];
 
 const whoBenefits = [
@@ -46,6 +47,7 @@ export default function FinancialAccountingPage() {
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
         primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        highlights={["Accounting", "Los Angeles"]}
         compact
       />
 
@@ -57,6 +59,7 @@ export default function FinancialAccountingPage() {
               <SectionTitle
                 subtitle="Our Accounting Services"
                 title="Financial Clarity You Can Count On"
+                highlights={["Clarity", "Count"]}
                 align="left"
               />
               <p className="text-muted leading-relaxed text-lg">
@@ -94,6 +97,7 @@ export default function FinancialAccountingPage() {
           <SectionTitle
             subtitle="What We Provide"
             title="Financial Accounting Services Include"
+            highlights={["Accounting", "Services"]}
             description="Our financial accounting services are designed to give you a complete and accurate view of your business finances."
           />
           <div className="max-w-2xl mx-auto mt-8">
@@ -118,13 +122,14 @@ export default function FinancialAccountingPage() {
           <SectionTitle
             subtitle="Why MBS Taxes"
             title="Why Choose MBS TAXES"
+            highlights={["Choose"]}
             light
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all h-full">
-                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">{highlightText(item.title, [item.highlight], "light")}</h3>
                   <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -139,6 +144,7 @@ export default function FinancialAccountingPage() {
           <SectionTitle
             subtitle="Who Benefits"
             title="Who Benefits from Financial Accounting"
+            highlights={["Benefits", "Accounting"]}
             description="Our financial accounting services support a wide range of clients who need organized, accurate financial reporting."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

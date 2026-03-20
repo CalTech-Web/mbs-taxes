@@ -15,6 +15,7 @@ export default function FAQsPage() {
     <>
       <Hero
         title="Frequently Asked Questions"
+        highlights={["Questions"]}
         bgImage="/images/pexels-leeloothefirst-5428828.jpg"
         compact
       />
@@ -24,6 +25,7 @@ export default function FAQsPage() {
           <SectionTitle
             subtitle="FAQs"
             title="Answers to Common Questions"
+            highlights={["Answers"]}
             description="Find answers to the most common questions about our tax and accounting services. If you need additional help, don't hesitate to reach out."
           />
 

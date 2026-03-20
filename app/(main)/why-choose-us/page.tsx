@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { highlightText } from "@/lib/highlightText";
 import {
   ShieldCheck,
   FileSearch,
@@ -44,24 +45,28 @@ const steps = [
   {
     number: "1",
     title: "Client Receives Notice",
+    highlights: ["Notice"],
     description:
       "You receive a letter or notice from the IRS or state tax authority regarding your return.",
   },
   {
     number: "2",
     title: "Notify Tax Protection Plus",
+    highlights: ["Protection"],
     description:
       "Contact our team and we immediately forward your case to Tax Protection Plus for review.",
   },
   {
     number: "3",
     title: "Tax Specialist Goes to Work",
+    highlights: ["Specialist", "Work"],
     description:
       "A dedicated CPA or Enrolled Agent reviews your case, researches the issue, and takes action on your behalf.",
   },
   {
     number: "4",
     title: "Case Is Resolved",
+    highlights: ["Resolved"],
     description:
       "Your case is handled from start to finish until the matter is fully resolved and closed.",
   },
@@ -72,6 +77,7 @@ export default function WhyChooseUsPage() {
     <>
       <Hero
         title="Why Choose MBS TAXES"
+        highlights={["Choose"]}
         subtitle="Trusted Tax Consultant Services"
         description="We go beyond tax preparation with audit protection, year-round support, and a dedicated team that stands behind every return we file."
         bgImage="/images/pexels-mizunokozuki-13801813.jpg"
@@ -84,6 +90,7 @@ export default function WhyChooseUsPage() {
           <SectionTitle
             subtitle="Client Protection"
             title="1040 Client Protection Program"
+            highlights={["Protection", "Program"]}
             description="Every individual tax return we prepare comes with built-in audit protection through our partnership with Tax Protection Plus, a professional team of CPAs and Enrolled Agents dedicated to defending your return."
           />
           <div className="grid md:grid-cols-3 gap-8 mt-8">
@@ -108,6 +115,7 @@ export default function WhyChooseUsPage() {
           <SectionTitle
             subtitle="Expert Assistance"
             title="Notices & Audit Assistance"
+            highlights={["Audit", "Assistance"]}
             description="Our bilingual team is equipped to help you navigate IRS and state correspondence with confidence. We handle the stress so you don't have to."
           />
           <div className="grid md:grid-cols-2 gap-12 items-start mt-8">
@@ -117,7 +125,7 @@ export default function WhyChooseUsPage() {
                   <FileSearch className="w-7 h-7 text-amber-500" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-dark mb-4">
-                  What We Handle
+                  {highlightText("What We Handle", ["Handle"])}
                 </h3>
                 <ul className="space-y-3">
                   {noticeServices.map((service) => (
@@ -138,7 +146,7 @@ export default function WhyChooseUsPage() {
                   <Users className="w-7 h-7 text-blue-500" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-dark mb-4">
-                  Bilingual Support
+                  {highlightText("Bilingual Support", ["Bilingual"])}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-4">
                   Our team offers bilingual support to ensure clear
@@ -163,6 +171,7 @@ export default function WhyChooseUsPage() {
           <SectionTitle
             subtitle="Identity Protection"
             title="Identity Theft Restoration"
+            highlights={["Identity", "Restoration"]}
             description="If your identity is compromised, our protection program provides immediate assistance through dedicated advocates who work to restore your identity and financial security."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -187,6 +196,7 @@ export default function WhyChooseUsPage() {
           <SectionTitle
             subtitle="How It Works"
             title="Our 4-Step Protection Process"
+            highlights={["Protection"]}
             light
           />
           <div className="grid md:grid-cols-4 gap-6 mt-12">
@@ -197,7 +207,7 @@ export default function WhyChooseUsPage() {
                     {step.number}
                   </div>
                   <h3 className="font-heading text-lg font-semibold text-gold-400 mb-2">
-                    {step.title}
+                    {highlightText(step.title, step.highlights, "light")}
                   </h3>
                   <p className="text-white/80 text-sm leading-relaxed">
                     {step.description}

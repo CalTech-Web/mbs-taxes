@@ -304,6 +304,22 @@ main::before {
   to { width: 60px; }
 }
 
+/* ===== SOFT WORD HIGHLIGHTS ===== */
+.soft-highlight {
+  background-color: rgba(31, 58, 95, 0.08);
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.soft-highlight-light {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 /* ===== BUTTON SHINE EFFECT ===== */
 .btn-shine {
   position: relative;
@@ -439,6 +455,10 @@ html.a11y-high-contrast a:hover {
 }
 html.a11y-high-contrast img {
   filter: contrast(1.2);
+}
+html.a11y-high-contrast .soft-highlight,
+html.a11y-high-contrast .soft-highlight-light {
+  background-color: rgba(255, 255, 0, 0.3);
 }
 html.a11y-high-contrast .a11y-widget-panel {
   filter: none;
