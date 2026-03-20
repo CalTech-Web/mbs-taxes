@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calculator, BookOpen, Building2, Briefcase, FileText, Monitor } from "lucide-react";
+import { ArrowRight, Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, MapPin, Users, UserRound, Building, Rocket, BriefcaseBusiness, LandPlot } from "lucide-react";
 import StatisticsCounter from "@/components/StatisticsCounter";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -63,12 +63,30 @@ const whyChoose = [
 ];
 
 const clientTypes = [
-  "Individuals & Families",
-  "Small Business Owners",
-  "Growing Companies",
-  "Businesses & Startups",
-  "Self-Employed Professionals",
-  "Established Businesses",
+  { label: "Individuals & Families", icon: Users },
+  { label: "Small Business Owners", icon: BriefcaseBusiness },
+  { label: "Growing Companies", icon: Rocket },
+  { label: "Businesses & Startups", icon: Building },
+  { label: "Self-Employed Professionals", icon: UserRound },
+  { label: "Established Businesses", icon: LandPlot },
+];
+
+const serviceAreas = [
+  "Lawndale",
+  "Long Beach",
+  "Palm Springs",
+  "San Gabriel",
+  "Los Angeles",
+  "Torrance",
+  "Hawthorne",
+  "Inglewood",
+  "Gardena",
+  "Redondo Beach",
+  "Manhattan Beach",
+  "El Segundo",
+  "Hermosa Beach",
+  "Carson",
+  "Compton",
 ];
 
 export default function HomePage() {
@@ -195,14 +213,41 @@ export default function HomePage() {
             title="Trusted by Individuals & Businesses"
             description="Headquartered in Lawndale, California, we proudly serve businesses and individuals across Los Angeles County, the United States, and internationally."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {clientTypes.map((type, i) => (
-              <ScrollReveal key={type} delay={i * 0.08}>
-                <div className="card-luxury card-navy rounded-xl p-5 text-center h-full border border-navy-100/20">
-                  <p className="font-heading text-sm font-semibold text-dark">{type}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {clientTypes.map((type, i) => {
+              const Icon = type.icon;
+              return (
+                <ScrollReveal key={type.label} delay={i * 0.08}>
+                  <div className="card-luxury card-navy rounded-xl p-6 text-center h-full border border-navy-100/20 flex flex-col items-center gap-3">
+                    <Icon className="w-7 h-7 text-gold-400" />
+                    <p className="font-heading text-sm font-semibold text-dark">{type.label}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          {/* Service Areas */}
+          <div className="mt-16">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark text-center mb-3">
+              Areas We Serve
+            </h3>
+            <p className="text-muted text-center max-w-2xl mx-auto mb-8">
+              With offices in Lawndale, Long Beach, Palm Springs, and San Gabriel, we serve clients throughout the greater Los Angeles area and beyond.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+              {serviceAreas.map((area, i) => (
+                <ScrollReveal key={area} delay={i * 0.04}>
+                  <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy-500/10 border border-navy-200/30 rounded-full text-sm font-semibold text-navy-700 hover:bg-navy-500 hover:text-white transition-all cursor-default">
+                    <span className="relative flex h-4 w-4 shrink-0">
+                      <span className="absolute inset-0 rounded-full bg-gold-400/40 animate-ping" />
+                      <MapPin className="relative h-4 w-4 text-gold-500" />
+                    </span>
+                    {area}
+                  </span>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
