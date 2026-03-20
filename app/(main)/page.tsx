@@ -97,8 +97,8 @@ export default function HomePage() {
         subtitle="Trusted support for financial clarity"
         description="MBS TAXES provides dependable tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies. We focus on accuracy, compliance, and long-term financial clarity."
         bgImage="/images/pexels-yankrukov-7693717.jpg"
-        primaryCta={{ label: "Schedule a FREE Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Call Now: (310) 256-2412", href: "tel:3102562412" }}
+        primaryCta={{ label: "FREE Consultation", href: "/contact" }}
+        secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         videoId="5bqtnevwpg"
       />
 

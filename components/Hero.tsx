@@ -134,7 +134,7 @@ export default function Hero({
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
-                  className="btn-shine px-8 py-3.5 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  className="btn-shine whitespace-nowrap px-8 py-3.5 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   {primaryCta.label}
                 </Link>
@@ -142,7 +142,7 @@ export default function Hero({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="group inline-flex items-center gap-2.5 px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all"
+                  className="group whitespace-nowrap inline-flex items-center gap-2.5 px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all"
                 >
                   <span className="relative flex h-5 w-5 shrink-0">
                     <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
