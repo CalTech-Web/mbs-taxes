@@ -48,7 +48,7 @@ export default function ServiceCard({
             className="w-16 h-16 rounded-2xl icon-luxury icon-float flex items-center justify-center mb-6 group-hover:scale-105 transition-all duration-300"
             aria-hidden="true"
           >
-            <Icon className={`w-8 h-8 ${iconColor}`} />
+            <Icon className={`w-8 h-8 ${iconColor} icon-glitch`} />
           </div>
           <h3 className="font-heading text-xl font-semibold text-dark mb-2 group-hover:text-navy-500 transition-colors duration-300">
             {title}

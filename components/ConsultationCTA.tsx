@@ -57,9 +57,9 @@ export default function ConsultationCTA() {
             { icon: Clock, title: "Year Round Support", desc: "Reliable help beyond tax season" },
             { icon: Phone, title: "No Obligation", desc: "Get answers with no pressure" },
           ].map((item) => (
-            <div key={item.title} className="text-center">
+            <div key={item.title} className="text-center group">
               <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-gold-400" />
+                <item.icon className="w-6 h-6 text-gold-400 icon-glitch" />
               </div>
               <h3 className="text-sm font-semibold mb-1">{item.title}</h3>
               <p className="text-xs text-white/70">{item.desc}</p>

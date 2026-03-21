@@ -134,7 +134,7 @@ export default function BusinessConsultingPage() {
                 <div className="group relative rounded-2xl p-6 bg-white/[0.06] backdrop-blur-sm border border-white/10 hover:bg-white/[0.12] hover:border-gold-400/30 transition-all duration-300 h-full">
                   <div className="absolute top-0 left-0 w-full h-0.5 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="w-10 h-10 rounded-lg bg-gold-400/15 flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-gold-400" />
+                    <item.icon className="w-5 h-5 text-gold-400 icon-glitch" />
                   </div>
                   <h3 className="font-heading text-base font-semibold text-white mb-1.5">{item.title}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
@@ -163,7 +163,7 @@ export default function BusinessConsultingPage() {
                     <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="flex items-start gap-4">
                       <div className="shrink-0 w-12 h-12 rounded-xl bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
-                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300 icon-glitch" />
                       </div>
                       <div>
                         <h3 className="font-heading text-base font-bold text-dark">{type.label}</h3>

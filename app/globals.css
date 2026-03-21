@@ -277,6 +277,40 @@ main::before {
   animation: orbFadeIn 1s ease forwards, orbDrift 20s ease-in-out infinite;
 }
 
+/* ===== RGB GLITCH ICON ANIMATION ===== */
+@keyframes iconRgbGlitch {
+  0%, 100% {
+    filter: none;
+    transform: translate(0);
+    opacity: 1;
+  }
+  7% {
+    filter: drop-shadow(3px 0 0 #ff0040) drop-shadow(-3px 0 0 #00ffff);
+    transform: translate(-2px, 1px);
+  }
+  10% {
+    filter: drop-shadow(-3px 0 0 #ff0040) drop-shadow(3px 0 0 #0040ff);
+    transform: translate(2px, -1px);
+  }
+  13% {
+    filter: none;
+    transform: translate(0);
+  }
+  47% {
+    filter: drop-shadow(2px 0 0 #ff0040) drop-shadow(-2px 0 0 #00ff40);
+    transform: translate(1px, 1px);
+    opacity: 0.85;
+  }
+  50% {
+    filter: none;
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.group:hover .icon-glitch {
+  animation: iconRgbGlitch 1.5s linear infinite;
+}
+
 /* ===== EXTERNAL WIDGET OVERRIDES ===== */
 #client-resource-center-container,
 #tax-tips-container,
@@ -440,8 +474,9 @@ body {
   .icon-pulse,
   .icon-glow,
   .badge-pulse,
-  .word-highlight {
-    animation: none;
+  .word-highlight,
+  .icon-glitch {
+    animation: none !important;
   }
   .card-luxury {
     transition: none;

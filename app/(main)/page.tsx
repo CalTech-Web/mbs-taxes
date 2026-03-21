@@ -223,7 +223,7 @@ export default function HomePage() {
                     <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="flex items-start gap-4">
                       <div className="shrink-0 w-12 h-12 rounded-xl bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
-                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300 icon-glitch" />
                       </div>
                       <div>
                         <h3 className="font-heading text-base font-bold text-dark">{type.label}</h3>

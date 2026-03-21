@@ -89,9 +89,9 @@ export default function WhyChooseUsPage() {
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             {auditFeatures.map((feature, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="card-luxury card-navy rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
+                <div className="group card-luxury card-navy rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                   <div className="w-14 h-14 rounded-2xl icon-luxury flex items-center justify-center mb-5">
-                    <ShieldCheck className="w-7 h-7 text-navy-500" />
+                    <ShieldCheck className="w-7 h-7 text-navy-500 icon-glitch" />
                   </div>
                   <p className="text-muted text-sm leading-relaxed">{feature}</p>
                 </div>
@@ -112,9 +112,9 @@ export default function WhyChooseUsPage() {
           />
           <div className="grid md:grid-cols-2 gap-12 items-start mt-8">
             <ScrollReveal>
-              <div className="card-luxury card-gold rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
+              <div className="group card-luxury card-gold rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <div className="w-14 h-14 rounded-2xl icon-luxury flex items-center justify-center mb-5">
-                  <FileSearch className="w-7 h-7 text-amber-500" />
+                  <FileSearch className="w-7 h-7 text-amber-500 icon-glitch" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-dark mb-4">
                   What We Handle
@@ -133,9 +133,9 @@ export default function WhyChooseUsPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="card-luxury card-blue rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
+              <div className="group card-luxury card-blue rounded-2xl p-8 h-full border border-navy-100/20 ring-1 ring-navy-100/10">
                 <div className="w-14 h-14 rounded-2xl icon-luxury flex items-center justify-center mb-5">
-                  <Users className="w-7 h-7 text-blue-500" />
+                  <Users className="w-7 h-7 text-blue-500 icon-glitch" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-dark mb-4">
                   Bilingual Support
@@ -168,9 +168,9 @@ export default function WhyChooseUsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {idTheftFeatures.map((feature, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="card-luxury card-navy rounded-2xl p-6 h-full border border-navy-100/20 ring-1 ring-navy-100/10 text-center">
+                <div className="group card-luxury card-navy rounded-2xl p-6 h-full border border-navy-100/20 ring-1 ring-navy-100/10 text-center">
                   <div className="w-12 h-12 rounded-full icon-luxury flex items-center justify-center mb-4 mx-auto">
-                    <Lock className="w-6 h-6 text-navy-500" />
+                    <Lock className="w-6 h-6 text-navy-500 icon-glitch" />
                   </div>
                   <p className="text-muted text-sm leading-relaxed">{feature}</p>
                 </div>
