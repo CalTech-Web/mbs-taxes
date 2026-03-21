@@ -330,50 +330,10 @@ main::before {
   font-size: 1.75rem !important;
 }
 
-/* ===== GOOGLE TRANSLATE WIDGET ===== */
-.google-translate-widget {
-  transition: opacity 0.3s ease;
-}
-/* Style the Google Translate select dropdown */
-.google-translate-widget .goog-te-gadget {
-  font-size: 0 !important;
-  color: transparent !important;
-}
-.google-translate-widget .goog-te-gadget > span {
+/* ===== GOOGLE TRANSLATE ===== */
+/* Hide the Google Translate hidden engine element */
+#gtranslate_hidden {
   display: none !important;
-}
-.google-translate-widget .goog-te-gadget select,
-.google-translate-widget .goog-te-combo {
-  appearance: none;
-  -webkit-appearance: none;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
-  padding: 4px 24px 4px 10px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-}
-.google-translate-widget .goog-te-combo:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-.google-translate-widget .goog-te-combo:focus {
-  border-color: #b91c1c;
-  box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.3);
-}
-/* Dropdown option text stays dark (browser native dropdown) */
-.google-translate-widget .goog-te-combo option {
-  color: #1a1a2e;
-  background: #fff;
 }
 /* Hide the Google Translate top bar and branding */
 .goog-te-banner-frame,
@@ -386,7 +346,6 @@ div.skiptranslate,
 body {
   top: 0 !important;
 }
-/* Remove Google Translate's injected body margin */
 html.translated-ltr body,
 html.translated-rtl body {
   top: 0 !important;
