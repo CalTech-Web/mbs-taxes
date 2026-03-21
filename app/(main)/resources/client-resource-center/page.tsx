@@ -14,7 +14,7 @@ export default function ClientResourceCenterPage() {
   return (
     <>
       <Hero
-        title="Client Resource Center"
+        title={<>Client <span className="word-highlight">Resource</span> Center</>}
         subtitle="Helpful Information & Resources"
         description="The Client Resource Center provides valuable information to help individuals and businesses understand tax requirements, financial planning, and compliance."
         bgImage="/images/pexels-yankrukov-7792743.jpg"
@@ -25,7 +25,7 @@ export default function ClientResourceCenterPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Your Resources"
-            title="Stay Informed & Prepared"
+            title={<>Stay Informed & <span className="word-highlight">Prepared</span></>}
             description="MBS TAXES provides dependable tax consultant services in Los Angeles to help individuals and businesses prepare and file tax returns accurately and efficiently."
           />
           <div className="mt-8">

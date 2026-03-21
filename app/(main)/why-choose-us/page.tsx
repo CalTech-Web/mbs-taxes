@@ -71,7 +71,7 @@ export default function WhyChooseUsPage() {
   return (
     <>
       <Hero
-        title="Why Choose MBS TAXES"
+        title={<>Why Choose MBS <span className="word-highlight">TAXES</span></>}
         subtitle="Trusted Tax Consultant Services"
         description="We go beyond tax preparation with audit protection, year-round support, and a dedicated team that stands behind every return we file."
         bgImage="/images/pexels-mizunokozuki-13801813.jpg"
@@ -83,7 +83,7 @@ export default function WhyChooseUsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Client Protection"
-            title="1040 Client Protection Program"
+            title={<>1040 Client <span className="word-highlight">Protection</span> Program</>}
             description="Every individual tax return we prepare comes with built-in audit protection through our partnership with Tax Protection Plus, a professional team of CPAs and Enrolled Agents dedicated to defending your return."
           />
           <div className="grid md:grid-cols-3 gap-8 mt-8">
@@ -107,7 +107,7 @@ export default function WhyChooseUsPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="Expert Assistance"
-            title="Notices & Audit Assistance"
+            title={<>Notices & Audit <span className="word-highlight">Assistance</span></>}
             description="Our bilingual team is equipped to help you navigate IRS and state correspondence with confidence. We handle the stress so you don't have to."
           />
           <div className="grid md:grid-cols-2 gap-12 items-start mt-8">
@@ -162,7 +162,7 @@ export default function WhyChooseUsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Identity Protection"
-            title="Identity Theft Restoration"
+            title={<>Identity Theft <span className="word-highlight">Restoration</span></>}
             description="If your identity is compromised, our protection program provides immediate assistance through dedicated advocates who work to restore your identity and financial security."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -186,7 +186,7 @@ export default function WhyChooseUsPage() {
         <div className="relative max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="How It Works"
-            title="Our 4-Step Protection Process"
+            title={<>Our 4-Step Protection <span className="word-highlight">Process</span></>}
             light
           />
           <div className="grid md:grid-cols-4 gap-6 mt-12">

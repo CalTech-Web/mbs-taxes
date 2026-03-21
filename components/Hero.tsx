@@ -7,7 +7,7 @@ import { Phone } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
 interface HeroProps {
-  title: string;
+  title: React.ReactNode;
   subtitle?: string;
   description?: string;
   bgImage: string;

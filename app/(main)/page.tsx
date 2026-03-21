@@ -93,7 +93,7 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        title="Tax Consultant and Accounting Services in Los Angeles"
+        title={<>Tax Consultant and <span className="word-highlight">Accounting</span> Services in Los Angeles</>}
         subtitle="Trusted support for financial clarity"
         description="MBS TAXES provides dependable tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies. We focus on accuracy, compliance, and long-term financial clarity."
         bgImage="/images/pexels-yankrukov-7693717.jpg"
@@ -111,7 +111,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="What We Offer"
-            title="Finance, Tax & Business Services"
+            title={<>Finance, Tax & Business <span className="word-highlight">Services</span></>}
             description="Professional tax consultant and accounting services designed to support individuals and organizations with accurate reporting, compliance, and financial clarity."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -131,7 +131,7 @@ export default function HomePage() {
                 Veteran Leadership You Can Trust
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Over 30 Years of Experience
+                Over 30 Years of <span className="word-highlight">Experience</span>
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 MBS TAXES is led by Dan Mossberg, a proud U.S. Marine Corps veteran and founder of this family-owned business. With over 30 years of experience preparing personal and business tax returns, Dan brings extensive expertise in corporate accounting, cost accounting, and general accounting management.
@@ -211,7 +211,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="Who We Serve"
-            title="Trusted by Individuals & Businesses"
+            title={<>Trusted by Individuals & <span className="word-highlight">Businesses</span></>}
             description="Headquartered in Lawndale, California, we proudly serve businesses and individuals across Los Angeles County, the United States, and internationally."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">

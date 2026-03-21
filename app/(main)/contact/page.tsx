@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <Hero
-        title="Contact MBS TAXES"
+        title={<>Contact MBS <span className="word-highlight">TAXES</span></>}
         subtitle="Speak with a Tax Consultant"
         bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
         compact
@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Get in Touch"
-            title="We're Here to Help"
+            title={<>We&apos;re Here to <span className="word-highlight">Help</span></>}
             description="Whether you have a question, need a consultation, or are ready to get started, our team is available to assist you."
           />
 

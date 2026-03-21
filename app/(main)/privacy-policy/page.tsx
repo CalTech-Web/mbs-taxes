@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Hero
-        title="Privacy Policy"
+        title={<><span className="word-highlight">Privacy</span> Policy</>}
         subtitle="Mossberg Business Services"
         bgImage="/images/pexels-khwanchai-12885860.jpg"
         compact
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Legal"
-            title="Our Privacy Practices"
+            title={<>Our Privacy <span className="word-highlight">Practices</span></>}
             description="This Privacy Policy explains how Mossberg Business Services (&ldquo;MBS TAXES,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and protects your personal information when you use our website and services."
           />
 

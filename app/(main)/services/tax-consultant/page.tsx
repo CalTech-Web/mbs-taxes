@@ -41,7 +41,7 @@ export default function TaxConsultantPage() {
   return (
     <>
       <Hero
-        title="Tax Consultant Services in Los Angeles"
+        title={<>Tax <span className="word-highlight">Consultant</span> Services in Los Angeles</>}
         subtitle="Expert Tax Guidance You Can Trust"
         description="MBS TAXES provides dependable tax consultant services to help individuals and businesses navigate tax preparation, planning, and compliance with confidence."
         bgImage="/images/pexels-yankrukov-7693717.jpg"
@@ -59,7 +59,7 @@ export default function TaxConsultantPage() {
                 Our Tax Consultant Services
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Comprehensive Tax Solutions
+                Comprehensive Tax <span className="word-highlight">Solutions</span>
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 At MBS TAXES, our tax consultant services are designed to provide individuals and businesses with accurate, compliant, and strategically sound tax preparation and planning. Whether you need help filing your annual return or want to develop a long-term tax strategy, our experienced team is here to help.
@@ -104,7 +104,7 @@ export default function TaxConsultantPage() {
                 What We Provide
               </span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark leading-tight">
-                Tax Consultant Services Include
+                Tax Consultant Services <span className="word-highlight">Include</span>
               </h2>
               <p className="mt-3 text-muted leading-relaxed">
                 Our team delivers a full range of tax consultant services to help you stay compliant and make informed financial decisions.
@@ -150,7 +150,7 @@ export default function TaxConsultantPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
               <p className="mt-1 text-sm text-muted">Our services are designed for</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">

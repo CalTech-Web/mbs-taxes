@@ -14,7 +14,7 @@ export default function FAQsPage() {
   return (
     <>
       <Hero
-        title="Frequently Asked Questions"
+        title={<>Frequently Asked <span className="word-highlight">Questions</span></>}
         bgImage="/images/pexels-leeloothefirst-5428828.jpg"
         compact
       />
@@ -23,7 +23,7 @@ export default function FAQsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="FAQs"
-            title="Answers to Common Questions"
+            title={<>Answers to Common <span className="word-highlight">Questions</span></>}
             description="Find answers to the most common questions about our tax and accounting services. If you need additional help, don't hesitate to reach out."
           />
 

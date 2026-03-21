@@ -47,7 +47,7 @@ export default function CorporateTaxPage() {
   return (
     <>
       <Hero
-        title="Corporate Tax and Accounting Services"
+        title={<>Corporate Tax and <span className="word-highlight">Accounting</span> Services</>}
         subtitle="Expert Solutions for Business Entities"
         description="MBS TAXES delivers corporate tax and accounting services for LLC, S Corp, and C Corp entities to maintain compliance and support long-term growth."
         bgImage="/images/pexels-n-voitkevich-6863250.jpg"
@@ -65,7 +65,7 @@ export default function CorporateTaxPage() {
                 Corporate Tax Solutions
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Tax &amp; Accounting for Business Entities
+                Tax &amp; Accounting for Business <span className="word-highlight">Entities</span>
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 Running a business comes with complex tax obligations. At MBS TAXES, we provide corporate tax and accounting services tailored to the specific needs of LLCs, S Corporations, and C Corporations. Our team helps ensure your entity stays compliant while optimizing your tax position.
@@ -125,7 +125,7 @@ export default function CorporateTaxPage() {
                 What We Provide
               </span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark leading-tight">
-                Corporate Tax &amp; Accounting Services Include
+                Corporate Tax &amp; Accounting Services <span className="word-highlight">Include</span>
               </h2>
               <p className="mt-3 text-muted leading-relaxed">
                 Our corporate services cover every aspect of tax and accounting for business entities.
@@ -171,7 +171,7 @@ export default function CorporateTaxPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
               <p className="mt-1 text-sm text-muted">Our services are designed for</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">

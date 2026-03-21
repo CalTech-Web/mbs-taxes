@@ -120,7 +120,7 @@ export default function PricingPage() {
   return (
     <>
       <Hero
-        title="Pricing Plans"
+        title={<>Pricing <span className="word-highlight">Plans</span></>}
         bgImage="/images/pexels-kampus-8463148.jpg"
         compact
       />
@@ -130,7 +130,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Individual Returns"
-            title="Personal Tax Preparation"
+            title={<>Personal Tax <span className="word-highlight">Preparation</span></>}
             description="Our individual tax preparation services cover all filing statuses and common tax situations. Each plan includes audit protection through our 1040 Client Protection Program."
           />
           <div className="grid md:grid-cols-3 gap-6">
@@ -148,7 +148,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="Business Returns"
-            title="Business Tax Preparation"
+            title={<>Business Tax <span className="word-highlight">Preparation</span></>}
             description="Our business tax services cover all entity types with comprehensive filing, reporting, and compliance support tailored to your business structure."
           />
           <div className="grid md:grid-cols-3 gap-6">

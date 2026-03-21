@@ -78,7 +78,7 @@ export default function ServicesPage() {
   return (
     <>
       <Hero
-        title="Tax & Accounting Services"
+        title={<>Tax & <span className="word-highlight">Accounting</span> Services</>}
         subtitle="Professional Solutions for Every Need"
         description="MBS TAXES provides comprehensive tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies."
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
@@ -92,7 +92,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionTitle
             subtitle="What We Offer"
-            title="Finance, Tax & Business Services"
+            title={<>Finance, Tax & Business <span className="word-highlight">Services</span></>}
             description="Professional tax consultant and accounting services designed to support individuals and organizations with accurate reporting, compliance, and financial clarity."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,7 +129,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who We Serve</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who We <span className="word-highlight">Serve</span></h2>
               <p className="mt-1 text-sm text-muted">Trusted by individuals & businesses</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">

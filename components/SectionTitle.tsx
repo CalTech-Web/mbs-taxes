@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 interface SectionTitleProps {
   subtitle?: string;
-  title: string;
+  title: React.ReactNode;
   description?: string;
   align?: "left" | "center";
   light?: boolean;

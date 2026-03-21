@@ -13,7 +13,7 @@ export default function TermsAndConditionsPage() {
   return (
     <>
       <Hero
-        title="Terms and Conditions"
+        title={<><span className="word-highlight">Terms</span> and Conditions</>}
         subtitle="Mossberg Business Services"
         bgImage="/images/pexels-khwanchai-12885860.jpg"
         compact
@@ -23,7 +23,7 @@ export default function TermsAndConditionsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Legal"
-            title="Terms of Service"
+            title={<>Terms of <span className="word-highlight">Service</span></>}
             description="These Terms and Conditions govern your use of the MBS TAXES website and the services provided by Mossberg Business Services. By accessing or using our website and services, you agree to be bound by these terms."
           />
 

@@ -38,7 +38,7 @@ export default function BookAppointmentPage() {
   return (
     <>
       <Hero
-        title="Book an Appointment"
+        title={<>Book an <span className="word-highlight">Appointment</span></>}
         subtitle="Schedule Your Free Consultation"
         description="Ready to take control of your taxes and finances? Schedule a free consultation with our team to discuss your needs and learn how MBS TAXES can help."
         bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
@@ -49,7 +49,7 @@ export default function BookAppointmentPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Get Started"
-            title="Schedule Your Appointment"
+            title={<>Schedule Your <span className="word-highlight">Appointment</span></>}
             description="Whether you need help with personal taxes, business accounting, or tax planning, our team is ready to assist. Contact us to schedule a convenient time to meet."
           />
 

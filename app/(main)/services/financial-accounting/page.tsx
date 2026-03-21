@@ -40,7 +40,7 @@ export default function FinancialAccountingPage() {
   return (
     <>
       <Hero
-        title="Financial Accounting Services in Los Angeles"
+        title={<>Financial <span className="word-highlight">Accounting</span> Services in Los Angeles</>}
         subtitle="Clear Financial Insight for Your Business"
         description="MBS TAXES delivers accurate financial accounting services to help businesses understand their financial position and make informed decisions."
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
@@ -58,7 +58,7 @@ export default function FinancialAccountingPage() {
                 Our Accounting Services
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Financial Clarity You Can Count On
+                Financial <span className="word-highlight">Clarity</span> You Can Count On
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 Understanding your financial position is essential for making sound business decisions. At MBS TAXES, our financial accounting services provide you with accurate, organized, and timely financial reports that give you a clear picture of where your business stands.
@@ -103,7 +103,7 @@ export default function FinancialAccountingPage() {
                 What We Provide
               </span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark leading-tight">
-                Financial Accounting Services Include
+                Financial Accounting Services <span className="word-highlight">Include</span>
               </h2>
               <p className="mt-3 text-muted leading-relaxed">
                 Our financial accounting services are designed to give you a complete and accurate view of your business finances.
@@ -149,7 +149,7 @@ export default function FinancialAccountingPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
               <p className="mt-1 text-sm text-muted">Our services are designed for</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">

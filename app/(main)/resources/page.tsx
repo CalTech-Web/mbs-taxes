@@ -119,7 +119,7 @@ export default function ResourcesPage() {
   return (
     <>
       <Hero
-        title="Resources"
+        title={<><span className="word-highlight">Resources</span></>}
         subtitle="Helpful Information & Tools"
         bgImage="/images/pexels-n-voitkevich-6863245.jpg"
         compact
@@ -129,7 +129,7 @@ export default function ResourcesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             subtitle="Explore"
-            title="Resources for Our Clients"
+            title={<>Resources for Our <span className="word-highlight">Clients</span></>}
             description="Access the information and tools you need to stay informed about our services, pricing, and how to work with our team."
           />
 

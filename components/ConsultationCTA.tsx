@@ -32,7 +32,7 @@ export default function ConsultationCTA() {
           transition={{ delay: 0.1 }}
           className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
         >
-          FREE Consultation
+          <span className="word-highlight">FREE</span> Consultation
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

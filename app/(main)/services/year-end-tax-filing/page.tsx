@@ -39,7 +39,7 @@ export default function YearEndTaxFilingPage() {
   return (
     <>
       <Hero
-        title="Year End Tax Filing Services in Los Angeles"
+        title={<>Year End Tax <span className="word-highlight">Filing</span> Services in Los Angeles</>}
         subtitle="Accurate Filing Before Every Deadline"
         description="MBS TAXES provides dependable year end tax filing services to ensure your returns are prepared correctly, reviewed thoroughly, and submitted on time."
         bgImage="/images/pexels-mizunokozuki-12903182.jpg"
@@ -57,7 +57,7 @@ export default function YearEndTaxFilingPage() {
                 Year End Filing
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                File With Confidence
+                File With <span className="word-highlight">Confidence</span>
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 Year end tax filing requires attention to detail and a thorough understanding of current tax regulations. At MBS TAXES, we handle every aspect of the filing process to make sure your returns are accurate, compliant, and submitted before the deadline.
@@ -102,7 +102,7 @@ export default function YearEndTaxFilingPage() {
                 What We Provide
               </span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark leading-tight">
-                Year End Tax Filing Services Include
+                Year End Tax Filing Services <span className="word-highlight">Include</span>
               </h2>
               <p className="mt-3 text-muted leading-relaxed">
                 Our year end filing services cover everything you need to complete your tax returns accurately and on time.
@@ -148,7 +148,7 @@ export default function YearEndTaxFilingPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
               <p className="mt-1 text-sm text-muted">Our services are designed for</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">

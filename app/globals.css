@@ -277,6 +277,12 @@ main::before {
   animation: orbFadeIn 1s ease forwards, orbDrift 20s ease-in-out infinite;
 }
 
+/* ===== WORD HIGHLIGHT ===== */
+.word-highlight {
+  background: linear-gradient(transparent 55%, rgba(185, 28, 28, 0.18) 55%);
+  padding: 0 2px;
+}
+
 /* ===== ANIMATED TITLE UNDERLINE ===== */
 .title-underline {
   position: relative;

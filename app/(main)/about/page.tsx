@@ -51,7 +51,7 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        title="About MBS TAXES"
+        title={<>About MBS <span className="word-highlight">TAXES</span></>}
         subtitle="Expert Tax Solutions & Accounting Services"
         description="We are committed to the financial success of our clients and businesses we serve."
         bgImage="/images/pexels-silverkblack-23496869.jpg"
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 Who We Are
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Veteran Leadership You Can Trust
+                Veteran Leadership You Can <span className="word-highlight">Trust</span>
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 MBS TAXES is a veteran-owned firm providing dependable tax consultant and accounting services in Los Angeles. With decades of professional experience, our team supports individuals and businesses with accurate tax preparation, accounting, and financial guidance.

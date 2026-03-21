@@ -40,7 +40,7 @@ export default function QuickBooksPage() {
   return (
     <>
       <Hero
-        title="QuickBooks Tax Filing Services"
+        title={<><span className="word-highlight">QuickBooks</span> Tax Filing Services</>}
         subtitle="From QuickBooks to Filed Returns"
         description="MBS TAXES provides QuickBooks tax filing services including setup, book cleanup, W2 and 1099 preparation, and year end accounting to keep your finances accurate and compliant."
         bgImage="/images/pexels-yankrukov-7693186.jpg"
@@ -58,7 +58,7 @@ export default function QuickBooksPage() {
                 QuickBooks Services
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-dark leading-tight">
-                Expert QuickBooks Tax Filing Support
+                <span className="word-highlight">Expert</span> QuickBooks Tax Filing Support
               </h2>
               <p className="mt-5 text-muted leading-relaxed text-lg">
                 QuickBooks is a powerful tool for managing your business finances, but getting the most out of it requires expertise. At MBS TAXES, we provide comprehensive QuickBooks tax filing services that take your accounting data and turn it into accurate, compliant tax returns.
@@ -103,7 +103,7 @@ export default function QuickBooksPage() {
                 What We Provide
               </span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark leading-tight">
-                QuickBooks Tax Filing Services Include
+                QuickBooks Tax Filing Services <span className="word-highlight">Include</span>
               </h2>
               <p className="mt-3 text-muted leading-relaxed">
                 Our QuickBooks services cover setup, maintenance, and tax filing to ensure your financial records are accurate and complete.
@@ -149,7 +149,7 @@ export default function QuickBooksPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
               <p className="mt-1 text-sm text-muted">Our services are designed for</p>
             </ScrollReveal>
             <div className="flex flex-wrap gap-2.5">
