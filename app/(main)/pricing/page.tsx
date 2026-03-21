@@ -156,14 +156,8 @@ export default function PricingPage() {
               <PricingCard key={tier.title} tier={tier} index={i} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Note */}
-      <section className="py-16 section-depth">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <ScrollReveal>
-            <p className="text-muted text-sm leading-relaxed">
+          <ScrollReveal delay={0.3}>
+            <p className="mt-10 text-center text-muted text-sm leading-relaxed max-w-2xl mx-auto">
               Pricing varies based on the complexity of your tax situation,
               number of forms required, and additional services needed. Contact
               us for a personalized quote tailored to your specific needs. We

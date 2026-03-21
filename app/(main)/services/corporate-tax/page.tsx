@@ -145,20 +145,20 @@ export default function CorporateTaxPage() {
         </div>
       </section>
 
-      {/* Why Choose — compact horizontal strip */}
-      <section className="py-12 bg-navy-800 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Why Choose */}
+      <section className="py-16 bg-navy-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/50 via-transparent to-gold-400/[0.03] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {whyChoose.map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.08}>
-                <div className="flex items-start gap-3">
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                <div className="group relative rounded-2xl p-6 bg-white/[0.06] backdrop-blur-sm border border-white/10 hover:bg-white/[0.12] hover:border-gold-400/30 transition-all duration-300 h-full">
+                  <div className="absolute top-0 left-0 w-full h-0.5 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-10 h-10 rounded-lg bg-gold-400/15 flex items-center justify-center mb-4">
                     <item.icon className="w-5 h-5 text-gold-400" />
                   </div>
-                  <div>
-                    <h3 className="font-heading text-sm font-semibold text-gold-400">{item.title}</h3>
-                    <p className="text-white/70 text-xs mt-0.5">{item.desc}</p>
-                  </div>
+                  <h3 className="font-heading text-base font-semibold text-white mb-1.5">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
