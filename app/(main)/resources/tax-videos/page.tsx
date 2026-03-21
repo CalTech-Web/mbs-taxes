@@ -17,7 +17,7 @@ export default function TaxVideosPage() {
         title={<>Tax <span className="word-highlight">Videos</span></>}
         subtitle="Watch & Learn About Tax Topics"
         description="MBS TAXES offers informative tax videos designed to help individuals and businesses better understand tax preparation, accounting, and financial planning."
-        bgImage="/images/pexels-mikhail-nilov-7735691.jpg"
+        bgImage="/images/pexels-photo-7433822.jpg"
         compact
       />
 

@@ -44,7 +44,7 @@ export default function BusinessConsultingPage() {
         title={<>Business <span className="word-highlight">Consulting</span> Services in Los Angeles</>}
         subtitle="Strategic Guidance for Business Growth"
         description="MBS TAXES offers business consulting services to help you streamline operations, organize financial records, and build a strong foundation for long-term growth."
-        bgImage="/images/pexels-yankrukov-7691708.jpg"
+        bgImage="/images/pexels-photo-7108593.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact

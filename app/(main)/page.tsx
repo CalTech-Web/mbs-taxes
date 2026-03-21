@@ -105,7 +105,7 @@ export default function HomePage() {
       <StatisticsCounter />
 
       {/* Services */}
-      <section className="py-20 bg-light relative overflow-hidden">
+      <section className="py-24 bg-light relative overflow-hidden">
         <div className="orb orb-gold orb-animate w-72 h-72 -top-20 -right-20" />
         <div className="orb orb-navy orb-animate w-56 h-56 -bottom-16 -left-16" style={{ animationDelay: "5s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -205,7 +205,7 @@ export default function HomePage() {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-20 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
         <div className="orb orb-gold orb-animate w-64 h-64 -top-16 -left-16 opacity-30" />
         <div className="orb orb-navy orb-animate w-48 h-48 -bottom-12 -right-12 opacity-20" style={{ animationDelay: "4s" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

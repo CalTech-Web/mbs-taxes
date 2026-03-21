@@ -42,7 +42,7 @@ export default function YearEndTaxFilingPage() {
         title={<>Year End Tax <span className="word-highlight">Filing</span> Services in Los Angeles</>}
         subtitle="Accurate Filing Before Every Deadline"
         description="MBS TAXES provides dependable year end tax filing services to ensure your returns are prepared correctly, reviewed thoroughly, and submitted on time."
-        bgImage="/images/pexels-mizunokozuki-12903182.jpg"
+        bgImage="/images/pexels-photo-7793118.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -79,13 +79,15 @@ export default function YearEndTaxFilingPage() {
             <ScrollReveal direction="right" className="lg:col-span-2">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/pexels-mizunokozuki-12903182.jpg"
-                    alt="Year end tax filing and document preparation"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                  />
+                  <div className="h-[450px]">
+                    <Image
+                      src="/images/pexels-mizunokozuki-12903182.jpg"
+                      alt="Year end tax filing and document preparation"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover object-[center_30%]"
+                    />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

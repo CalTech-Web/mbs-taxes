@@ -44,7 +44,7 @@ export default function TaxConsultantPage() {
         title={<>Tax <span className="word-highlight">Consultant</span> Services in Los Angeles</>}
         subtitle="Expert Tax Guidance You Can Trust"
         description="MBS TAXES provides dependable tax consultant services to help individuals and businesses navigate tax preparation, planning, and compliance with confidence."
-        bgImage="/images/pexels-yankrukov-7693717.jpg"
+        bgImage="/images/pexels-photo-6950015.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -82,7 +82,7 @@ export default function TaxConsultantPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/pexels-yankrukov-7693717.jpg"
+                    src="/images/pexels-photo-7691691.jpg"
                     alt="Tax consultant reviewing documents with client"
                     width={800}
                     height={600}

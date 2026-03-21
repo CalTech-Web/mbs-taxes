@@ -50,7 +50,7 @@ export default function CorporateTaxPage() {
         title={<>Corporate Tax and <span className="word-highlight">Accounting</span> Services</>}
         subtitle="Expert Solutions for Business Entities"
         description="MBS TAXES delivers corporate tax and accounting services for LLC, S Corp, and C Corp entities to maintain compliance and support long-term growth."
-        bgImage="/images/pexels-tiger-lily-7108758.jpg"
+        bgImage="/images/pexels-photo-7433898.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -102,13 +102,15 @@ export default function CorporateTaxPage() {
             <ScrollReveal direction="right" className="lg:col-span-2">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/pexels-tiger-lily-7108758.jpg"
-                    alt="Corporate tax and accounting services"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                  />
+                  <div className="h-[450px]">
+                    <Image
+                      src="/images/pexels-tiger-lily-7108758.jpg"
+                      alt="Corporate tax and accounting services"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover object-[center_35%]"
+                    />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

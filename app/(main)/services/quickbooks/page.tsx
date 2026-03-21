@@ -43,7 +43,7 @@ export default function QuickBooksPage() {
         title={<><span className="word-highlight">QuickBooks</span> Tax Filing Services</>}
         subtitle="From QuickBooks to Filed Returns"
         description="MBS TAXES provides QuickBooks tax filing services including setup, book cleanup, W2 and 1099 preparation, and year end accounting to keep your finances accurate and compliant."
-        bgImage="/images/pexels-yankrukov-7693186.jpg"
+        bgImage="/images/pexels-photo-7108452.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -80,13 +80,15 @@ export default function QuickBooksPage() {
             <ScrollReveal direction="right" className="lg:col-span-2">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/pexels-yankrukov-7693186.jpg"
-                    alt="QuickBooks tax filing and accounting services"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                  />
+                  <div className="h-[450px]">
+                    <Image
+                      src="/images/pexels-yankrukov-7693186.jpg"
+                      alt="QuickBooks tax filing and accounting services"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover object-[center_30%]"
+                    />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
