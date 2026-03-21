@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2, Shield, TrendingUp, Lightbulb, Handshake } from "lucide-react";
+import { CheckCircle2, Shield, TrendingUp, Lightbulb, Handshake, BriefcaseBusiness, Building, Rocket, UserRound, FolderOpen, Monitor } from "lucide-react";
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
@@ -29,12 +29,12 @@ const whyChoose = [
 ];
 
 const whoBenefits = [
-  "Small business owners",
-  "Startups and entrepreneurs",
-  "Growing companies",
-  "Self-employed professionals",
-  "Business owners seeking organization",
-  "Companies needing financial systems",
+  { label: "Small Business Owners", icon: BriefcaseBusiness, desc: "Operational guidance and financial organization" },
+  { label: "Startups & Entrepreneurs", icon: Building, desc: "Business formation, strategy, and growth planning" },
+  { label: "Growing Companies", icon: Rocket, desc: "Scalable systems and processes for expansion" },
+  { label: "Self-Employed Professionals", icon: UserRound, desc: "Business structure optimization and planning" },
+  { label: "Owners Seeking Organization", icon: FolderOpen, desc: "Streamlined workflows and financial clarity" },
+  { label: "Companies Needing Systems", icon: Monitor, desc: "Financial system setup and process improvement" },
 ];
 
 export default function BusinessConsultingPage() {
@@ -145,23 +145,35 @@ export default function BusinessConsultingPage() {
         </div>
       </section>
 
-      {/* Who Benefits — inline pills */}
-      <section className="py-16 section-depth">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-            <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who <span className="word-highlight">Benefits</span></h2>
-              <p className="mt-1 text-sm text-muted">Our services are designed for</p>
-            </ScrollReveal>
-            <div className="flex flex-wrap gap-2.5">
-              {whoBenefits.map((type, i) => (
-                <ScrollReveal key={type} delay={i * 0.05}>
-                  <span className="inline-block px-5 py-2.5 rounded-full bg-white border border-navy-200/40 text-sm font-semibold text-navy-700 shadow-sm hover:bg-navy-500 hover:text-white hover:border-navy-500 transition-all duration-300">
-                    {type}
-                  </span>
-                </ScrollReveal>
-              ))}
+      {/* Who Benefits */}
+      <section className="py-20 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="inline-block mb-3 text-sm font-semibold tracking-widest uppercase text-gold-400">Who Benefits</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark">Our Services Are Designed <span className="word-highlight">For</span></h2>
             </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {whoBenefits.map((type, i) => {
+              const Icon = type.icon;
+              return (
+                <ScrollReveal key={type.label} delay={i * 0.08}>
+                  <div className="group relative bg-white rounded-2xl p-7 h-full border border-navy-100/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-start gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
+                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-base font-bold text-dark">{type.label}</h3>
+                        <p className="mt-1 text-sm text-muted leading-relaxed">{type.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
