@@ -51,7 +51,7 @@ export default function TaxConsultantPage() {
       />
 
       {/* Intro — asymmetric 2-col with inline heading */}
-      <section className="py-20 section-depth relative overflow-hidden">
+      <section className="py-28 section-depth relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             <ScrollReveal direction="left" className="lg:col-span-3">
@@ -96,7 +96,7 @@ export default function TaxConsultantPage() {
       </section>
 
       {/* Services — icon card grid */}
-      <section className="py-16 bg-light relative overflow-hidden">
+      <section className="py-24 bg-light relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-3 gap-x-12 gap-y-8 items-start">
             <ScrollReveal className="lg:sticky lg:top-8">
@@ -125,7 +125,7 @@ export default function TaxConsultantPage() {
       </section>
 
       {/* Why Choose */}
-      <section className="py-16 bg-navy-800 text-white relative overflow-hidden">
+      <section className="py-24 bg-navy-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900/50 via-transparent to-gold-400/[0.03] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -146,7 +146,7 @@ export default function TaxConsultantPage() {
       </section>
 
       {/* Who Benefits — inline pills */}
-      <section className="py-16 section-depth">
+      <section className="py-24 section-depth">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
             <ScrollReveal className="shrink-0">
