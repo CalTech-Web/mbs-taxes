@@ -277,6 +277,25 @@ main::before {
   animation: orbFadeIn 1s ease forwards, orbDrift 20s ease-in-out infinite;
 }
 
+/* ===== EXTERNAL WIDGET OVERRIDES ===== */
+#client-resource-center-container,
+#tax-tips-container,
+#newsletter-container,
+#tax-video-container {
+  max-width: 100% !important;
+  overflow: hidden;
+}
+#client-resource-center-container *,
+#tax-tips-container *,
+#newsletter-container *,
+#tax-video-container * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#client-resource-center-container h1 {
+  font-size: 1.75rem !important;
+}
+
 /* ===== GTRANSLATE ===== */
 .gtranslate_wrapper {
   display: flex;

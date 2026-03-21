@@ -22,5 +22,5 @@ export default function ExternalWidget({ src }: ExternalWidgetProps) {
     };
   }, [src]);
 
-  return <div ref={containerRef} className="w-full min-h-[400px]" />;
+  return <div ref={containerRef} className="w-full min-h-[400px] overflow-hidden" />;
 }
