@@ -175,30 +175,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us — compact strip */}
-      <section className="py-14 bg-navy-800 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
-            <div className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-white">Why Choose Us</h2>
-              <Link
-                href="/why-choose-us"
-                className="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors"
-              >
-                Learn More <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1">
-              {whyChoose.map((item, i) => (
-                <ScrollReveal key={item.title} delay={i * 0.08}>
-                  <div>
-                    <h3 className="font-heading text-sm font-semibold text-gold-400">{item.title}</h3>
-                    <p className="text-white/70 text-xs mt-0.5">{item.desc}</p>
+      {/* Why Choose Us */}
+      <section className="py-16 bg-navy-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/50 via-transparent to-gold-400/[0.03] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {whyChoose.map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.08}>
+                <div className="group relative rounded-2xl p-6 bg-white/[0.06] backdrop-blur-sm border border-white/10 hover:bg-white/[0.12] hover:border-gold-400/30 transition-all duration-300 h-full">
+                  <div className="absolute top-0 left-0 w-full h-0.5 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-10 h-10 rounded-lg bg-gold-400/15 flex items-center justify-center mb-4">
+                    <span className="text-gold-400 text-lg font-heading font-bold">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                  <h3 className="font-heading text-base font-semibold text-white mb-1.5">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
+          <ScrollReveal delay={0.3} className="mt-8 text-center">
+            <Link
+              href="/why-choose-us"
+              className="btn-shine inline-flex items-center gap-2 px-7 py-3 bg-gold-400 text-white font-semibold rounded-full hover:bg-gold-300 transition-all shadow-lg text-sm"
+            >
+              Why Choose Us <ArrowRight className="w-4 h-4" />
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
