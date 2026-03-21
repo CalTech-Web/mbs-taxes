@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import ScrollReveal from "@/components/ScrollReveal";
-import { ChevronDown, HelpCircle, FileText, Building2, Shield, Handshake, DollarSign } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Phone, ChevronDown } from "lucide-react";
 
 interface FAQ {
   question: string;
@@ -11,14 +10,12 @@ interface FAQ {
 
 interface FAQCategory {
   title: string;
-  icon: typeof HelpCircle;
   faqs: FAQ[];
 }
 
 const faqCategories: FAQCategory[] = [
   {
     title: "General Questions",
-    icon: HelpCircle,
     faqs: [
       {
         question: "What services does MBS TAXES offer?",
@@ -49,7 +46,6 @@ const faqCategories: FAQCategory[] = [
   },
   {
     title: "Tax Preparation",
-    icon: FileText,
     faqs: [
       {
         question: "What types of tax returns do you prepare?",
@@ -85,7 +81,6 @@ const faqCategories: FAQCategory[] = [
   },
   {
     title: "Business Services",
-    icon: Building2,
     faqs: [
       {
         question: "Do you offer bookkeeping services?",
@@ -116,7 +111,6 @@ const faqCategories: FAQCategory[] = [
   },
   {
     title: "IRS & Compliance",
-    icon: Shield,
     faqs: [
       {
         question: "Can you help if I have an issue with the IRS?",
@@ -142,7 +136,6 @@ const faqCategories: FAQCategory[] = [
   },
   {
     title: "Working With Us",
-    icon: Handshake,
     faqs: [
       {
         question: "How do I get started with MBS TAXES?",
@@ -173,7 +166,6 @@ const faqCategories: FAQCategory[] = [
   },
   {
     title: "Pricing",
-    icon: DollarSign,
     faqs: [
       {
         question: "How much do your services cost?",
@@ -194,213 +186,174 @@ const faqCategories: FAQCategory[] = [
   },
 ];
 
-function FAQItem({
-  faq,
-  isOpen,
-  onToggle,
-  index,
-}: {
-  faq: FAQ;
-  isOpen: boolean;
-  onToggle: () => void;
-  index: number;
-}) {
-  return (
-    <div
-      className={`group rounded-2xl transition-all duration-300 ${
-        isOpen
-          ? "bg-white shadow-lg ring-1 ring-navy-100/30 border-l-4 border-l-gold-400"
-          : "bg-white/60 hover:bg-white border border-navy-100/15 hover:shadow-md hover:border-navy-100/30"
-      }`}
-    >
-      <button
-        onClick={onToggle}
-        className="w-full flex items-center gap-4 px-6 py-5 text-left transition-colors"
-        aria-expanded={isOpen}
-      >
-        <span
-          className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-heading transition-all duration-300 ${
-            isOpen
-              ? "bg-gold-400 text-white"
-              : "bg-navy-500/8 text-navy-400 group-hover:bg-navy-500/15"
-          }`}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span
-          className={`font-heading font-semibold text-sm md:text-base flex-1 transition-colors duration-300 ${
-            isOpen ? "text-navy-600" : "text-dark"
-          }`}
-        >
-          {faq.question}
-        </span>
-        <div
-          className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-            isOpen
-              ? "bg-gold-400/10 rotate-180"
-              : "bg-navy-50 group-hover:bg-navy-100/50"
-          }`}
-        >
-          <ChevronDown
-            className={`w-4 h-4 transition-colors duration-300 ${
-              isOpen ? "text-gold-400" : "text-navy-400"
-            }`}
-          />
-        </div>
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-6 pb-6 pl-[4.5rem]">
-          <div className="w-12 h-[2px] bg-gradient-to-r from-gold-400 to-gold-300 rounded-full mb-3" />
-          <p className="text-muted text-sm leading-[1.8]">{faq.answer}</p>
-        </div>
-      </div>
-    </div>
-  );
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
 export default function FAQAccordion() {
-  const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
-  const [activeCategory, setActiveCategory] = useState(0);
-  const categoryRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeSection, setActiveSection] = useState(0);
+  const [tocOpen, setTocOpen] = useState(false);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const toggleItem = (key: string) => {
-    setOpenItems((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
-  const scrollToCategory = (index: number) => {
-    setActiveCategory(index);
-    categoryRefs.current[index]?.scrollIntoView({
+  const scrollToSection = useCallback((index: number) => {
+    setTocOpen(false);
+    sectionRefs.current[index]?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-  };
+  }, []);
 
-  const totalFaqs = faqCategories.reduce((sum, cat) => sum + cat.faqs.length, 0);
+  // IntersectionObserver for active section tracking
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    sectionRefs.current.forEach((el, index) => {
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(index);
+          }
+        },
+        { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
-    <div className="grid lg:grid-cols-[280px_1fr] gap-10">
-      {/* Sticky Sidebar Nav */}
-      <div className="hidden lg:block">
-        <div className="sticky top-28">
-          <div className="rounded-2xl bg-white border border-navy-100/20 shadow-sm p-5">
-            <p className="text-xs font-semibold tracking-widest uppercase text-gold-400 mb-4">
-              Categories
-            </p>
-            <nav className="space-y-1.5">
-              {faqCategories.map((category, i) => {
-                const Icon = category.icon;
-                return (
-                  <button
-                    key={category.title}
-                    onClick={() => scrollToCategory(i)}
-                    className={`group w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm font-medium transition-all duration-200 ${
-                      activeCategory === i
-                        ? "bg-navy-500 text-white shadow-md"
-                        : "text-muted hover:bg-navy-50 hover:text-navy-600"
-                    }`}
-                  >
-                    <Icon
-                      className={`w-4 h-4 shrink-0 icon-glitch ${
-                        activeCategory === i ? "text-gold-300" : "text-navy-400 group-hover:text-navy-500"
-                      }`}
-                    />
-                    {category.title}
-                    <span
-                      className={`ml-auto text-xs font-bold ${
-                        activeCategory === i ? "text-white/60" : "text-navy-300"
+    <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] xl:grid-cols-[240px_1fr_240px] gap-8 xl:gap-10">
+
+      {/* ── Left Column: Table of Contents ── */}
+      <div className="lg:block">
+        {/* Mobile: collapsible toggle */}
+        <div className="lg:hidden mb-6">
+          <button
+            onClick={() => setTocOpen(!tocOpen)}
+            className="w-full flex items-center justify-between bg-white rounded-xl border border-gray-200 px-5 py-3.5 shadow-sm"
+          >
+            <span className="font-heading font-bold text-navy-700 text-sm">Table of Contents</span>
+            <ChevronDown className={`w-4 h-4 text-navy-400 transition-transform duration-200 ${tocOpen ? "rotate-180" : ""}`} />
+          </button>
+          {tocOpen && (
+            <nav className="mt-2 bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+              <ol className="space-y-1">
+                {faqCategories.map((cat, i) => (
+                  <li key={cat.title}>
+                    <button
+                      onClick={() => scrollToSection(i)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                        activeSection === i
+                          ? "text-navy-700 font-semibold border-l-[3px] border-navy-600 bg-navy-50/50"
+                          : "text-gray-600 hover:text-navy-700 hover:underline"
                       }`}
                     >
-                      {category.faqs.length}
-                    </span>
-                  </button>
-                );
-              })}
+                      <span className="text-gray-400 mr-2.5">{i + 1}.</span>
+                      {cat.title}
+                    </button>
+                  </li>
+                ))}
+              </ol>
             </nav>
-            <div className="mt-5 pt-4 border-t border-navy-100/20">
-              <p className="text-xs text-muted">
-                <span className="font-bold text-navy-500">{totalFaqs}</span> questions across{" "}
-                <span className="font-bold text-navy-500">{faqCategories.length}</span> categories
-              </p>
+          )}
+        </div>
+
+        {/* Desktop: sticky card */}
+        <div className="hidden lg:block sticky top-6 self-start">
+          <div className="rounded-xl bg-white shadow-[0_1px_4px_rgba(0,0,0,0.08)] overflow-hidden">
+            <div className="bg-navy-700 px-5 py-3.5">
+              <h2 className="font-heading font-bold text-white text-sm tracking-wide">Table of Contents</h2>
             </div>
+            <nav className="p-4">
+              <ol className="space-y-0.5">
+                {faqCategories.map((cat, i) => (
+                  <li key={cat.title}>
+                    <button
+                      onClick={() => scrollToSection(i)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-[13px] leading-snug transition-all duration-200 ${
+                        activeSection === i
+                          ? "text-navy-700 font-semibold border-l-[3px] border-navy-600 bg-navy-50/40"
+                          : "text-gray-500 hover:text-navy-700 hover:underline border-l-[3px] border-transparent"
+                      }`}
+                    >
+                      <span className="text-gray-400 mr-2">{i + 1}.</span>
+                      {cat.title}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
 
-      {/* Mobile Category Pills */}
-      <div className="lg:hidden -mx-6 px-6 pb-2 overflow-x-auto">
-        <div className="flex gap-2 min-w-max">
-          {faqCategories.map((category, i) => {
-            const Icon = category.icon;
-            return (
-              <button
-                key={category.title}
-                onClick={() => scrollToCategory(i)}
-                className={`group flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                  activeCategory === i
-                    ? "bg-navy-500 text-white shadow-md"
-                    : "bg-white border border-navy-200/40 text-navy-600 hover:bg-navy-50"
-                }`}
-              >
-                <Icon className={`w-3.5 h-3.5 ${activeCategory === i ? "text-gold-300" : "text-navy-400"}`} />
-                {category.title}
-              </button>
-            );
-          })}
-        </div>
+      {/* ── Center Column: FAQ Content ── */}
+      <div>
+        {faqCategories.map((category, catIndex) => (
+          <div
+            key={category.title}
+            id={slugify(category.title)}
+            ref={(el) => { sectionRefs.current[catIndex] = el; }}
+            className="scroll-mt-24 mb-14 last:mb-0"
+          >
+            {/* Section label */}
+            <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-gray-400 mb-6">
+              {category.title}
+            </p>
+
+            {/* Questions & Answers */}
+            {category.faqs.map((faq, faqIndex) => (
+              <div key={faqIndex} className={faqIndex < category.faqs.length - 1 ? "mb-8 pb-8 border-b border-gray-100" : ""}>
+                <h3 className="font-heading font-bold text-dark text-xl md:text-[22px] leading-snug mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-500 text-[15px] leading-[1.85]">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
 
-      {/* FAQ Content */}
-      <div className="space-y-14">
-        {faqCategories.map((category, catIndex) => {
-          const Icon = category.icon;
-          return (
-            <ScrollReveal
-              key={category.title}
-              delay={catIndex * 0.05}
-            >
-              <div
-                ref={(el) => { categoryRefs.current[catIndex] = el; }}
-                className="scroll-mt-28"
-              >
-                {/* Category Header */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="group shrink-0 w-11 h-11 rounded-xl bg-navy-500/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-navy-500 icon-glitch" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-lg font-bold text-dark">
-                      {category.title}
-                    </h3>
-                    <p className="text-xs text-muted">
-                      {category.faqs.length} question{category.faqs.length !== 1 ? "s" : ""}
-                    </p>
-                  </div>
-                  <div className="hidden sm:block flex-1 h-[1.5px] bg-gradient-to-r from-navy-100/40 to-transparent rounded-full" />
-                </div>
+      {/* ── Right Column: Contact Card ── */}
+      <div>
+        {/* Desktop: sticky */}
+        <div className="hidden lg:block sticky top-6 self-start">
+          <div className="rounded-xl bg-[#f0f3f7] p-6">
+            <div className="w-11 h-11 rounded-full bg-navy-700 flex items-center justify-center mb-4">
+              <Phone className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="font-heading font-bold text-navy-700 text-lg mb-2">Contact Us</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-5">
+              Have a question not listed here? Our team is ready to help with any tax or accounting inquiry.
+            </p>
+            <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-navy-600 mb-1.5">CALL NOW!</p>
+            <a href="tel:+13103554911" className="font-heading font-extrabold text-gold-400 text-2xl hover:underline">
+              (310) 355-4911
+            </a>
+          </div>
+        </div>
 
-                {/* FAQ Items */}
-                <div className="space-y-3">
-                  {category.faqs.map((faq, faqIndex) => {
-                    const key = `${catIndex}-${faqIndex}`;
-                    return (
-                      <FAQItem
-                        key={key}
-                        faq={faq}
-                        isOpen={!!openItems[key]}
-                        onToggle={() => toggleItem(key)}
-                        index={faqIndex}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            </ScrollReveal>
-          );
-        })}
+        {/* Mobile: static at bottom */}
+        <div className="lg:hidden mt-8">
+          <div className="rounded-xl bg-[#f0f3f7] p-6 text-center">
+            <div className="w-11 h-11 rounded-full bg-navy-700 flex items-center justify-center mb-4 mx-auto">
+              <Phone className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="font-heading font-bold text-navy-700 text-lg mb-2">Contact Us</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-5">
+              Have a question not listed here? Our team is ready to help with any tax or accounting inquiry.
+            </p>
+            <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-navy-600 mb-1.5">CALL NOW!</p>
+            <a href="tel:+13103554911" className="font-heading font-extrabold text-gold-400 text-2xl hover:underline">
+              (310) 355-4911
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
