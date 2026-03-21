@@ -1,28 +1,41 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function GTranslate() {
+  const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     const w = window as any;
-    if (w.gtranslateSettings) return;
 
-    w.gtranslateSettings = {
-      default_language: "en",
-      languages: ["en", "es", "zh-TW"],
-      wrapper_selector: ".gtranslate_wrapper",
-      flag_style: "2d",
-      flag_size: 24,
-      alt_flags: { en: "usa", es: "mexico" },
-      horizontal_position: "inline",
-      flags_location: "https://cdn.gtranslate.net/flags/svg/",
+    // Google Translate init callback
+    w.googleTranslateElementInit = () => {
+      new w.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,es,zh-TW",
+          layout: w.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+      setLoaded(true);
     };
 
-    const script = document.createElement("script");
-    script.src = "https://cdn.gtranslate.net/widgets/latest/fc.js";
-    script.defer = true;
-    document.head.appendChild(script);
+    // Load the script
+    if (!document.querySelector('script[src*="translate.google.com"]')) {
+      const script = document.createElement("script");
+      script.src =
+        "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.head.appendChild(script);
+    }
   }, []);
 
-  return <div className="gtranslate_wrapper" />;
+  return (
+    <div
+      id="google_translate_element"
+      className={`google-translate-widget ${loaded ? "opacity-100" : "opacity-0"}`}
+    />
+  );
 }
