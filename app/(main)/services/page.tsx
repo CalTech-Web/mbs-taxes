@@ -1,6 +1,6 @@
 "use client";
 
-import { Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, Shield, Clock, Award, MapPin } from "lucide-react";
+import { Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, Shield, Clock, Award, MapPin, Users, UserRound, Building, Rocket, BriefcaseBusiness, LandPlot } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -66,12 +66,12 @@ const whyChoose = [
 ];
 
 const whoWeServe = [
-  "Individuals & Families",
-  "Small Business Owners",
-  "Growing Companies",
-  "Self-Employed Professionals",
-  "Startups & Entrepreneurs",
-  "Established Businesses",
+  { label: "Individuals & Families", icon: Users, desc: "Personal tax returns, estate planning, and financial guidance" },
+  { label: "Small Business Owners", icon: BriefcaseBusiness, desc: "Bookkeeping, payroll, and tax compliance for small businesses" },
+  { label: "Growing Companies", icon: Rocket, desc: "Scalable accounting solutions for expanding organizations" },
+  { label: "Self-Employed Professionals", icon: UserRound, desc: "Schedule C filing, deductions, and quarterly estimates" },
+  { label: "Startups & Entrepreneurs", icon: Building, desc: "Entity formation, tax strategy, and financial setup" },
+  { label: "Established Businesses", icon: LandPlot, desc: "Corporate accounting, audits, and multi-state compliance" },
 ];
 
 export default function ServicesPage() {
@@ -124,23 +124,34 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Who We Serve — inline pills */}
-      <section className="py-16 section-depth">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-            <ScrollReveal className="shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-dark">Who We <span className="word-highlight">Serve</span></h2>
-              <p className="mt-1 text-sm text-muted">Trusted by individuals & businesses</p>
-            </ScrollReveal>
-            <div className="flex flex-wrap gap-2.5">
-              {whoWeServe.map((type, i) => (
-                <ScrollReveal key={type} delay={i * 0.05}>
-                  <span className="inline-block px-5 py-2.5 rounded-full bg-white border border-navy-200/40 text-sm font-semibold text-navy-700 shadow-sm hover:bg-navy-500 hover:text-white hover:border-navy-500 transition-all duration-300">
-                    {type}
-                  </span>
+      {/* Who We Serve */}
+      <section className="py-20 bg-gradient-to-b from-white via-navy-50/30 to-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <SectionTitle
+            subtitle="Who We Serve"
+            title={<>Trusted by Individuals & <span className="word-highlight">Businesses</span></>}
+            description="We provide tax and accounting services to individuals, families, and businesses of all sizes across Los Angeles and beyond."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {whoWeServe.map((type, i) => {
+              const Icon = type.icon;
+              return (
+                <ScrollReveal key={type.label} delay={i * 0.08}>
+                  <div className="group relative bg-white rounded-2xl p-7 h-full border border-navy-100/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-gold-400 to-gold-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-start gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
+                        <Icon className="w-6 h-6 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-base font-bold text-dark">{type.label}</h3>
+                        <p className="mt-1 text-sm text-muted leading-relaxed">{type.desc}</p>
+                      </div>
+                    </div>
+                  </div>
                 </ScrollReveal>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>

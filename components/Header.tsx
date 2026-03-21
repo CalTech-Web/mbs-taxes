@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X, Phone } from "lucide-react";
+import GTranslate from "@/components/GTranslate";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -76,13 +77,16 @@ export default function Header() {
             <span className="text-white/80 text-xs">
               Veteran-Owned Tax Consultant &amp; Accounting Services in Los Angeles
             </span>
-            <a
-              href="tel:3102562412"
-              className="flex items-center gap-2 hover:text-red-400 transition-colors font-medium"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              (310) 256-2412
-            </a>
+            <div className="flex items-center gap-6">
+              <a
+                href="tel:3102562412"
+                className="flex items-center gap-2 hover:text-red-400 transition-colors font-medium"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                (310) 256-2412
+              </a>
+              <GTranslate />
+            </div>
           </div>
         </div>
 

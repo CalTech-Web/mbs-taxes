@@ -277,6 +277,49 @@ main::before {
   animation: orbFadeIn 1s ease forwards, orbDrift 20s ease-in-out infinite;
 }
 
+/* ===== GTRANSLATE ===== */
+.gtranslate_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gtranslate_wrapper .glink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 11px !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.6px;
+  transition: all 0.3s ease;
+}
+.gtranslate_wrapper .glink:hover {
+  color: #ff2b2b !important;
+}
+.gtranslate_wrapper .glink img {
+  border: none;
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gtranslate_wrapper .glink:hover img {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.35);
+}
+/* Hide Google Translate bar */
+div.skiptranslate,
+#google_translate_element2 {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+
 /* ===== WORD HIGHLIGHT ===== */
 .word-highlight {
   display: inline-block;
