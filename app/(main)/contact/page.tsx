@@ -25,7 +25,7 @@ export default function ContactPage() {
       <Hero
         title={<>Contact MBS <span className="word-highlight">TAXES</span></>}
         subtitle="Speak with a Tax Consultant"
-        bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
+        bgImage="/images/pexels-silverkblack-23496923.jpg"
         compact
       />
 

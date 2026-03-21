@@ -43,7 +43,7 @@ export default function FinancialAccountingPage() {
         title={<>Financial <span className="word-highlight">Accounting</span> Services in Los Angeles</>}
         subtitle="Clear Financial Insight for Your Business"
         description="MBS TAXES delivers accurate financial accounting services to help businesses understand their financial position and make informed decisions."
-        bgImage="/images/pexels-n-voitkevich-6863245.jpg"
+        bgImage="/images/pexels-vlada-karpovich-7433827.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -81,7 +81,7 @@ export default function FinancialAccountingPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/pexels-n-voitkevich-6863245.jpg"
+                    src="/images/pexels-vlada-karpovich-7433827.jpg"
                     alt="Financial accounting reports and analysis"
                     width={800}
                     height={600}

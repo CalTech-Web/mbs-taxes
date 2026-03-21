@@ -41,7 +41,7 @@ export default function BookAppointmentPage() {
         title={<>Book an <span className="word-highlight">Appointment</span></>}
         subtitle="Schedule Your Free Consultation"
         description="Ready to take control of your taxes and finances? Schedule a free consultation with our team to discuss your needs and learn how MBS TAXES can help."
-        bgImage="/images/pexels-mikhail-nilov-7731330.jpg"
+        bgImage="/images/pexels-silverkblack-23496869.jpg"
         compact
       />
 

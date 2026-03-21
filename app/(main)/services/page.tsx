@@ -81,7 +81,7 @@ export default function ServicesPage() {
         title={<>Tax & <span className="word-highlight">Accounting</span> Services</>}
         subtitle="Professional Solutions for Every Need"
         description="MBS TAXES provides comprehensive tax consultant and accounting services in Los Angeles for individuals, business owners, and established companies."
-        bgImage="/images/pexels-n-voitkevich-6863245.jpg"
+        bgImage="/images/pexels-yankrukov-7693731.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact

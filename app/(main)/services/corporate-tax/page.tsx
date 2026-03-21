@@ -50,7 +50,7 @@ export default function CorporateTaxPage() {
         title={<>Corporate Tax and <span className="word-highlight">Accounting</span> Services</>}
         subtitle="Expert Solutions for Business Entities"
         description="MBS TAXES delivers corporate tax and accounting services for LLC, S Corp, and C Corp entities to maintain compliance and support long-term growth."
-        bgImage="/images/pexels-n-voitkevich-6863250.jpg"
+        bgImage="/images/pexels-tiger-lily-7108758.jpg"
         primaryCta={{ label: "FREE Consultation", href: "/contact" }}
         secondaryCta={{ label: "(310) 256-2412", href: "tel:3102562412" }}
         compact
@@ -103,7 +103,7 @@ export default function CorporateTaxPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/pexels-n-voitkevich-6863250.jpg"
+                    src="/images/pexels-tiger-lily-7108758.jpg"
                     alt="Corporate tax and accounting services"
                     width={800}
                     height={600}
