@@ -65,7 +65,7 @@ export default function Hero({
 
   return (
     <section
-      className={`relative ${compact ? "h-[500px] flex flex-col justify-center" : "pt-48 pb-32 md:pt-56 md:pb-40"} overflow-hidden`}
+      className={`relative ${compact ? "h-[600px] flex flex-col justify-center" : "pt-48 pb-32 md:pt-56 md:pb-40"} overflow-hidden`}
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
