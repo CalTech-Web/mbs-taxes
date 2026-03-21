@@ -279,8 +279,14 @@ main::before {
 
 /* ===== WORD HIGHLIGHT ===== */
 .word-highlight {
-  background: linear-gradient(transparent 55%, rgba(185, 28, 28, 0.18) 55%);
-  padding: 0 2px;
+  display: inline-block;
+  padding: 5px;
+  border: 1.5px solid rgba(185, 28, 28, 0.3);
+  border-radius: 10px;
+  background: rgba(185, 28, 28, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* ===== ANIMATED TITLE UNDERLINE ===== */
