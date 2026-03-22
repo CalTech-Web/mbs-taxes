@@ -27,7 +27,7 @@ export default function TaxTipsPage() {
             subtitle="Expert Tips"
             title={<>Tax Tips & <span className="word-highlight">Strategies</span></>}
           />
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 [&>div]:mx-auto [&>div]:flex [&>div]:justify-center">
             <ExternalWidget src="https://widget.resourcesforclients.com/wtt/tips.js?u=T9LHWPeABJsm" />
           </div>
         </div>
