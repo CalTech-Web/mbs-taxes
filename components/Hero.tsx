@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Script from "next/script";
 import { Phone } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
@@ -29,39 +30,42 @@ export default function Hero({
 }: HeroProps) {
   const hasVideo = !!videoId;
   const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<any>(null);
 
-  // Pre-load Wistia scripts on mount so they're ready when user clicks play
+  // When Wistia is ready, grab the video handle
   useEffect(() => {
     if (!videoId) return;
-
-    const existing = document.querySelector('script[src*="fast.wistia.com/assets/external/E-v1.js"]');
-    if (existing) return;
-
-    const script1 = document.createElement("script");
-    script1.src = `https://fast.wistia.com/embed/medias/${videoId}.jsonp`;
-    script1.async = true;
-
-    const script2 = document.createElement("script");
-    script2.src = "https://fast.wistia.com/assets/external/E-v1.js";
-    script2.async = true;
-
-    document.head.appendChild(script1);
-    document.head.appendChild(script2);
-  }, [videoId]);
-
-  // When user clicks play, use Wistia queue to auto-play
-  useEffect(() => {
-    if (!playing || !videoId) return;
 
     const w = window as any;
     w._wq = w._wq || [];
     w._wq.push({
       id: videoId,
       onReady: (video: any) => {
-        video.play();
+        videoRef.current = video;
       },
     });
-  }, [playing, videoId]);
+  }, [videoId]);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    // Give the embed a moment to become visible, then play
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play();
+      } else {
+        // Fallback: try via Wistia queue
+        const w = window as any;
+        w._wq = w._wq || [];
+        w._wq.push({
+          id: videoId,
+          onReady: (video: any) => {
+            videoRef.current = video;
+            video.play();
+          },
+        });
+      }
+    }, 100);
+  };
 
   return (
     <section
@@ -161,59 +165,78 @@ export default function Hero({
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
+            <Script
+              src={`https://fast.wistia.com/embed/medias/${videoId}.jsonp`}
+              strategy="lazyOnload"
+            />
+            <Script
+              src="https://fast.wistia.com/assets/external/E-v1.js"
+              strategy="lazyOnload"
+            />
             <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                {playing ? (
-                  <div className="absolute inset-0 wistia_responsive_padding">
+              {/* Wistia embed — always in DOM so Wistia can initialize it */}
+              <div
+                className="wistia_responsive_padding"
+                style={{ padding: "56.25% 0 0 0", position: "relative" }}
+              >
+                <div
+                  className="wistia_responsive_wrapper"
+                  style={{ height: "100%", left: 0, position: "absolute", top: 0, width: "100%" }}
+                >
+                  <div
+                    className={`wistia_embed wistia_async_${videoId} playerColor=dc2626 videoFoam=true`}
+                    style={{ height: "100%", position: "relative", width: "100%" }}
+                  >
                     <div
-                      className={`wistia_embed wistia_async_${videoId} autoPlay=true playerColor=dc2626 videoFoam=true`}
-                      style={{ width: "100%", height: "100%", position: "relative" }}
+                      className="wistia_swatch"
+                      style={{ height: "100%", left: 0, opacity: 0, overflow: "hidden", position: "absolute", top: 0, transition: "opacity 200ms", width: "100%" }}
                     >
-                      <div className="wistia_swatch" style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, opacity: 0, overflow: "hidden", transition: "opacity 200ms" }}>
-                        <img
-                          src={`https://fast.wistia.com/embed/medias/${videoId}/swatch`}
-                          alt=""
-                          style={{ width: "100%", height: "100%", objectFit: "contain", filter: "blur(5px)" }}
-                          aria-hidden="true"
-                        />
-                      </div>
+                      <img
+                        src={`https://fast.wistia.com/embed/medias/${videoId}/swatch`}
+                        alt=""
+                        style={{ filter: "blur(5px)", height: "100%", objectFit: "contain", width: "100%" }}
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
-                ) : (
-                  <button
-                    onClick={() => setPlaying(true)}
-                    className="absolute inset-0 w-full h-full cursor-pointer group"
-                    aria-label="Play video"
-                  >
-                    {/* Wistia thumbnail */}
-                    <img
-                      src="https://embed-ssl.wistia.com/deliveries/65c9550daae5e795679f0b37ebbe6449.jpg?image_crop_resized=960x540"
-                      alt="Video thumbnail"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
-                    {/* Red pulsing play button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="relative flex items-center justify-center">
-                        {/* Pulse ring */}
-                        <span className="absolute h-20 w-20 rounded-full bg-red-600/40 animate-ping" />
-                        {/* Solid button */}
-                        <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-red-600 shadow-lg group-hover:bg-red-500 group-hover:scale-110 transition-all">
-                          <svg
-                            className="h-7 w-7 text-white ml-1"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </span>
-                      </span>
-                    </div>
-                  </button>
-                )}
+                </div>
               </div>
+
+              {/* Custom play-button overlay */}
+              {!playing && (
+                <button
+                  onClick={handlePlay}
+                  className="absolute inset-0 z-10 w-full h-full cursor-pointer group"
+                  aria-label="Play video"
+                >
+                  {/* Wistia thumbnail */}
+                  <img
+                    src="https://embed-ssl.wistia.com/deliveries/65c9550daae5e795679f0b37ebbe6449.jpg?image_crop_resized=960x540"
+                    alt="Video thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+                  {/* Red pulsing play button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="relative flex items-center justify-center">
+                      {/* Pulse ring */}
+                      <span className="absolute h-20 w-20 rounded-full bg-red-600/40 animate-ping" />
+                      {/* Solid button */}
+                      <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-red-600 shadow-lg group-hover:bg-red-500 group-hover:scale-110 transition-all">
+                        <svg
+                          className="h-7 w-7 text-white ml-1"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </button>
+              )}
             </div>
           </motion.div>
         )}
