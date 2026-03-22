@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, BookOpen, Wrench, FileCheck, BriefcaseBusiness, U
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import OfficeLocations from "@/components/OfficeLocations";
 
 export const metadata: Metadata = {
   title: "QuickBooks Tax Filing Services",
@@ -178,6 +179,8 @@ export default function QuickBooksPage() {
           </div>
         </div>
       </section>
+
+      <OfficeLocations />
 
       <ConsultationCTA />
     </>

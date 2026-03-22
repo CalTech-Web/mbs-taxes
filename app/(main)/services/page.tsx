@@ -6,6 +6,7 @@ import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import OfficeLocations from "@/components/OfficeLocations";
 
 const services = [
   {
@@ -155,6 +156,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <OfficeLocations />
 
       <ConsultationCTA />
     </>

@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, BarChart2, BookOpen, CalendarClock, BriefcaseBusi
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import OfficeLocations from "@/components/OfficeLocations";
 
 export const metadata: Metadata = {
   title: "Financial Accounting Services in Los Angeles",
@@ -176,6 +177,8 @@ export default function FinancialAccountingPage() {
           </div>
         </div>
       </section>
+
+      <OfficeLocations />
 
       <ConsultationCTA />
     </>

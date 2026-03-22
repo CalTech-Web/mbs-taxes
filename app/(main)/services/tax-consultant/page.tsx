@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, Clock, Award, Users, UserRound, BriefcaseBusiness
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import OfficeLocations from "@/components/OfficeLocations";
 
 export const metadata: Metadata = {
   title: "Tax Consultant Services in Los Angeles",
@@ -177,6 +178,8 @@ export default function TaxConsultantPage() {
           </div>
         </div>
       </section>
+
+      <OfficeLocations />
 
       <ConsultationCTA />
     </>

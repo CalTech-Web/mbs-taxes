@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, FileCheck, Clock, Search, Users, UserRound, Brief
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import OfficeLocations from "@/components/OfficeLocations";
 
 export const metadata: Metadata = {
   title: "Year End Tax Filing Services in Los Angeles",
@@ -177,6 +178,8 @@ export default function YearEndTaxFilingPage() {
           </div>
         </div>
       </section>
+
+      <OfficeLocations />
 
       <ConsultationCTA />
     </>
