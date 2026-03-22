@@ -33,6 +33,17 @@ export const metadata: Metadata = {
     title: "MBS Taxes | Tax Consultant & Accounting Services in Los Angeles",
     description:
       "Veteran-owned firm providing dependable tax consultant and accounting services in Los Angeles with over 30 years of experience.",
+    images: [
+      {
+        url: "/images/main-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "MBS Taxes - Tax Consultant & Accounting Services",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "./",
   },
   twitter: {
     card: "summary_large_image",

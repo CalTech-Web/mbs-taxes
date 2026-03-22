@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, MapPin, Users, UserRound, Building, Rocket, BriefcaseBusiness, LandPlot } from "lucide-react";
+import { ArrowRight, Calculator, BookOpen, Building2, Briefcase, FileText, Monitor, MapPin, Phone, Users, UserRound, Building, Rocket, BriefcaseBusiness, LandPlot } from "lucide-react";
 import StatisticsCounter from "@/components/StatisticsCounter";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -69,6 +69,15 @@ const clientTypes = [
   { label: "Businesses & Startups", icon: Building, desc: "Entity formation, tax strategy, and financial setup" },
   { label: "Self-Employed Professionals", icon: UserRound, desc: "Schedule C filing, deductions, and quarterly estimates" },
   { label: "Established Businesses", icon: LandPlot, desc: "Corporate accounting, audits, and multi-state compliance" },
+];
+
+const offices = [
+  { name: "Lawndale (HQ)", address: "16129 Hawthorne Blvd STE D #1007", phone: "(310) 256-2412", href: "tel:3102562412" },
+  { name: "Palm Springs", phone: "(760) 688-0565", href: "tel:7606880565" },
+  { name: "Long Beach", phone: "(562) 285-5555", href: "tel:5622855555" },
+  { name: "San Gabriel", phone: "(626) 535-2288", href: "tel:6265352288" },
+  { name: "Español LA", phone: "(213) 291-8840", href: "tel:2132918840" },
+  { name: "Mandarin", phone: "(626) 545-0695", href: "tel:6265450695" },
 ];
 
 const serviceAreas = [
@@ -236,18 +245,53 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* Service Areas */}
+          {/* Office Locations + Service Areas */}
           <div className="mt-20 text-center">
             <ScrollReveal>
               <span className="inline-block mb-3 text-sm font-semibold tracking-widest uppercase text-gold-400">
-                Service Areas
+                Our Locations
               </span>
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark mb-3">
-                Areas We Serve
+                Office <span className="word-highlight">Locations</span>
               </h3>
               <p className="text-muted max-w-2xl mx-auto mb-10">
-                With offices in Lawndale, Long Beach, Palm Springs, and San Gabriel, we serve clients throughout the greater Los Angeles area and beyond.
+                With offices across Southern California and multilingual support, we serve clients throughout the greater Los Angeles area and beyond.
               </p>
+            </ScrollReveal>
+
+            {/* Office Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-14">
+              {offices.map((office, i) => (
+                <ScrollReveal key={office.name} delay={i * 0.06}>
+                  <div className="group relative bg-white rounded-xl p-5 border border-navy-100/30 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-left h-full">
+                    <div className="flex items-start gap-3">
+                      <div className="shrink-0 w-10 h-10 rounded-lg bg-navy-500/10 flex items-center justify-center group-hover:bg-gold-400 transition-colors duration-300">
+                        <MapPin className="w-5 h-5 text-navy-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-heading text-sm font-bold text-dark">{office.name}</h4>
+                        {"address" in office && (
+                          <p className="text-xs text-muted mt-0.5">{office.address}</p>
+                        )}
+                        <a
+                          href={office.href}
+                          className="inline-flex items-center gap-1.5 mt-1.5 text-sm font-semibold text-gold-400 hover:text-gold-500 transition-colors"
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          {office.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            {/* Service Area Pills */}
+            <ScrollReveal>
+              <h4 className="font-heading text-lg font-semibold text-dark mb-6">
+                Areas We Serve
+              </h4>
             </ScrollReveal>
             <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
               {serviceAreas.map((area, i) => (

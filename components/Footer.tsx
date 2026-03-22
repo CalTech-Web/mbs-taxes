@@ -20,6 +20,7 @@ const quickLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Contact Us", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ];
 
 export default function Footer() {
